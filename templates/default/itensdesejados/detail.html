@@ -1,0 +1,65 @@
+{% extends "default/panel/layout.html" %} 
+
+{% block page_info %}
+<li>
+  <b>Itens Desejados</b>
+</li>
+<li>
+  <a class="active">Detalhes</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="bg-white">
+   <!-- START PANEL -->
+   <div class="panel panel-transparent">
+      <div class="panel-heading">
+         <div class="panel-title">
+            Itens Desejados
+         </div>
+         <div class="row">
+            <!-- BASIC DATA -->
+            <div class="col-lg-8 col-md-8 ">
+               <!-- START PANEL -->
+               <div class="panel panel-transparent">
+                  <div class="panel-body">
+                     <div class="row clearfix">
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Nome do Produto:</label>
+                              {{object.nome}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Data Prevista:</label>
+                              {{object.data_prevista}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Imagem Produto:</label>
+                              {{object.imagem_produto}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Link de Compra:</label>
+                              {{object.link}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- END PANEL -->
+         </div>
+         <!-- END BASIC DATA -->
+      </div>
+   </div>
+</div>
+<!-- END PANEL -->
+</div>
+{% endblock %}

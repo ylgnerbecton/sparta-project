@@ -1,0 +1,56 @@
+{% extends "default/panel/layout.html" %} 
+
+{% block page_info %}
+<li>
+  <b>Segurança</b>
+</li>
+<li>
+  <a class="active">Detalhes</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="bg-white">
+   <!-- START PANEL -->
+   <div class="panel panel-transparent">
+      <div class="panel-heading">
+         <div class="panel-title">
+            Segurança
+         </div>
+         <div class="row">
+            <!-- BASIC DATA -->
+            <div class="col-lg-8 col-md-8 ">
+               <!-- START PANEL -->
+               <div class="panel panel-transparent">
+                  <div class="panel-body">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>E-mail:</label>
+                              {{object.email}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Senha:</label>
+                              {{object.senha}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Tipo de Conta:</label>
+                              {{object.id_tipoconta}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- END PANEL -->
+            </div>
+            <!-- END BASIC DATA -->
+         </div>
+      </div>
+   </div>
+   <!-- END PANEL -->
+</div>
+{% endblock %}

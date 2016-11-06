@@ -3,7 +3,7 @@
 
 {% block page_info %}
 <li>
-  <b>Divída</b>
+  <b>Controle de Custo</b>
 </li>
 <li>
   <a class="active">Cadastro</a>
@@ -22,7 +22,7 @@
    <li class="active">
      <a data-toggle="tab" href="#tab1"><i class="fa fa-bars tab-icon"></i>
       <span>
-       Divída
+       Controle de Custo
      </span>
    </a>
  </li>
@@ -32,7 +32,6 @@
 
 <form autocomplete="off" method="post" enctype="multipart/form-data" role="form" id="form-personal" novalidate="novalidate">
   {% csrf_token %}
-
   <div class="tab-content">
    <div class="tab-pane active slide-left" id="tab1">
      <div class="row row-same-height">
@@ -41,57 +40,65 @@
          <div class="padding-10">               
            <div class="row">
              <div class="col-sm-4">
-               <div class="form-group form-group-default required">                        
-                 <label>{{form.nome_divida.label_tag}}</label>
-                 {{form.nome_divida}}
+               <div class="form-group form-group-default required" maxlength="45">
+                 <label>{{form.nome.label_tag}}</label>
+                 {{form.nome}}
                </div>
              </div>
              <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.data_inicio.label_tag}}</label>
-                 {{form.data_inicio}}
+               <div class="form-group form-group-default required" maxlength="45">
+                 <label>{{form.data.label_tag}}</label>
+                 {{form.data}}
                </div>
              </div>
              <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.data_atual.label_tag}}</label>
-                 {{form.data_atual}}
+               <div class="form-group form-group-default">
+                 <label>{{form.id_renda.label_tag}}</label>
+                 <select class="form-control" id="id_renda" name="id_renda">
+                  <option value={{form.id_renda}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+             <div class="col-sm-4">
+               <div class="form-group form-group-default required"  maxlength="45">
+                 <label>{{form.valor_ganho_renda.label_tag}}</label>
+                 {{form.valor_ganho_renda}}
                </div>
              </div>
-           </div>
-           <div class="row">
              <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.data_fim.label_tag}}</label>
-                 {{form.data_fim}}
-               </div>
-             </div>
-             <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.id_parcela.label_tag}}</label>
-                 <select class="form-control" id="id_parcela" name="id_parcela">
-                  <option value={{form.id_parcela}}</option>
+               <div class="form-group form-group-default">
+                 <label>{{form.id_despesa.label_tag}}</label>
+                 <select class="form-control" id="id_despesa" name="id_despesa">
+                  <option value={{form.id_despesa}}</option>
                   </select>
                 </div>
               </div>
               <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_parcela.label_tag}}</label>
-                 {{form.valor_parcela}}
+               <div class="form-group form-group-default required"  maxlength="45">
+                 <label>{{form.valor_anterior_despesa.label_tag}}</label>
+                 {{form.valor_anterior_despesa}}
                </div>
              </div>
            </div>
            <div class="row">
              <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_divida.label_tag}}</label>
-                 {{form.valor_divida}}
+               <div class="form-group form-group-default required"  maxlength="45">
+                 <label>{{form.valor_retirado_despesa.label_tag}}</label>
+                 {{form.valor_retirado_despesa}}
                </div>
              </div>
              <div class="col-sm-4">               
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_pago.label_tag}}</label>
-                 {{form.valor_pago}}
+               <div class="form-group form-group-default required"  maxlength="45">
+                 <label>{{form.valor_atual_despesa.label_tag}}</label>
+                 {{form.valor_atual_despesa}}
+               </div>
+             </div>
+             <div class="col-sm-4">               
+               <div class="form-group form-group-default required"  maxlength="45">
+                 <label>{{form.comentario.label_tag}}</label>
+                 {{form.comentario}}
                </div>
              </div>
            </div>
@@ -122,11 +129,9 @@
 </script>
 <script src="{% static 'js/default/bootstrap-datepicker.js' %}" type="text/javascript"></script>
 <script>
-  $(document).ready(function() {
+ $(document).ready(function() {
          //Input mask
-         $('#data_inicio').mask("99/99/9999");
-         $('#data_atual').mask("99/99/9999");
-         $('#data_fim').mask("99/99/9999");
+         $('#data').mask("99/99/9999");
        });
 
       //Submit form

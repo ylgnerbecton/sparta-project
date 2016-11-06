@@ -7,7 +7,7 @@
 
 {% block page_info %}
 <li>
-  <a class="active">Divída</a>
+  <a class="active">Itens Desejados</a>
 </li>
 {% endblock %}
 
@@ -15,10 +15,10 @@
 <div class="panel panel-transparent">
   <div class="panel-heading no-padding">
     <div class="panel-title fs-16">
-      Lista de Divída
+      Itens Desejados
     </div>
     <div class="btn-group pull-right m-b-10">
-     <a class="btn btn-default" href="/sparta/divida/register/" type="button">Cadastrar</a>
+     <a class="btn btn-default" href="/sparta/itensdesejados/register/" type="button">Cadastrar</a>
    </div>
    <div class="pull-right">
     <div class="col-xs-12">
@@ -43,45 +43,30 @@
    </tr>
  </thead>
  <tbody>
-  {% for divida in object_list %}
+  {% for itensdesejados in object_list %}
   <tr>
    <td class="v-align-middle ">
-    <p>{{divida.nome_divida}}</p>
+    <p>{{itensdesejados.nome}}</p>
   </td>
   <td class="v-align-middle">
-    <p>{{divida.data_inicio}}</p>
+    <p>{{itensdesejados.data_prevista}}</p>
   </td>
   <td class="v-align-middle">
-    <p>{{divida.data_atual}}</p>
+    <p>{{itensdesejados.link}}</p>
   </td>
   <td class="v-align-middle">
-   <p>{{divida.data_fim}}</p>
- </td>
- <td class="v-align-middle ">
-  <p>{{divida.id_parcela}}</p>
-</td>
-<td class="v-align-middle">
-  <p>{{divida.valor_parcela}}</p>
-</td>
-<td class="v-align-middle">
-  <p>{{divida.valor_divida}}</p>
-</td>
-<td class="v-align-middle">
- <p>{{divida.valor_pago}}</p>
-</td>
-<td class="v-align-middle">
-  <a href="/sparta/divida/detail/{{divida.id_divida}}">
-    <i class="pg-search"></i>
-  </a>
-  <a href="/sparta/divida/edit/{{divida.id_divida}}">
-    <i class="pg-settings"></i>
-  </a>
-  {% if request.divida.id_divida != divida.id_divida %}
-  <a href="/sparta/divida/delete/{{divida.id_divida}}">
-    <i class="pg-eraser"></i>
-  </a>
-  {% endif %}
-</td>
+    <a href="/sparta/itensdesejados/detail/{{itensdesejados.id_itensdesejados}}">
+      <i class="pg-search"></i>
+    </a>
+    <a href="/sparta/itensdesejados/edit/{{itensdesejados.id_itensdesejados}}">
+      <i class="pg-settings"></i>
+    </a>
+    {% if request.itensdesejados.id_itensdesejados != itensdesejados.id_itensdesejados %}
+    <a href="/sparta/itensdesejados/delete/{{itensdesejados.id_itensdesejados}}">
+      <i class="pg-eraser"></i>
+    </a>
+    {% endif %}
+  </td>
 </tr>
 {% endfor %}
 </tbody>

@@ -1,0 +1,71 @@
+{% extends "default/panel/layout.html" %} 
+{% load staticfiles %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block page_info %}
+<li>
+  <a class="active">Divída</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="panel panel-transparent">
+  <div class="panel-heading no-padding">
+    <div class="panel-title fs-16">
+      Lista de Divída
+    </div>
+    <div class="btn-group pull-right m-b-10">
+     <a class="btn btn-default" href="/sparta/seguranca/register/" type="button">Cadastrar</a>
+   </div>
+   <div class="pull-right">
+    <div class="col-xs-12">
+      <input type="text" id="search-table" class="form-control pull-right" placeholder="Buscar">
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="panel-body no-padding">
+ <table class="table table-hover table-condensed table-responsive" id="tableWithSearch">
+  <thead>
+    <tr>
+     <th style="width:17%">E-mail</th>
+     <th style="width:17%">Senha</th>
+     <th style="width:17%">Tipo de Conta</th>
+     <th style="width:15%">Opções</th>
+   </tr>
+ </thead>
+ <tbody>
+  {% for seguranca in object_list %}
+  <tr>
+   <td class="v-align-middle ">
+    <p>{{seguranca.email}}</p>
+  </td>
+  <td class="v-align-middle">
+    <p>{{seguranca.senha}}</p>
+  </td>
+  <td class="v-align-middle">
+   <p>{{seguranca.id_tipoconta}}</p>
+ </td>
+ <td class="v-align-middle">
+  <a href="/sparta/seguranca/detail/{{seguranca.id_seguranca}}">
+    <i class="pg-search"></i>
+  </a>
+  <a href="/sparta/seguranca/edit/{{seguranca.id_seguranca}}">
+    <i class="pg-settings"></i>
+  </a>
+  {% if request.seguranca.id_seguranca != seguranca.id_seguranca %}
+  <a href="/sparta/seguranca/delete/{{seguranca.id_seguranca}}">
+    <i class="pg-eraser"></i>
+  </a>
+  {% endif %}
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+{% endblock %}

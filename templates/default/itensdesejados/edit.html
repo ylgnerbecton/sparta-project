@@ -3,7 +3,7 @@
 
 {% block page_info %}
 <li>
-  <b>Divída</b>
+  <b>Itens Desejados</b>
 </li>
 <li>
   <a class="active">Cadastro</a>
@@ -22,7 +22,7 @@
    <li class="active">
      <a data-toggle="tab" href="#tab1"><i class="fa fa-bars tab-icon"></i>
       <span>
-       Divída
+       Itens Desejados
      </span>
    </a>
  </li>
@@ -42,56 +42,28 @@
            <div class="row">
              <div class="col-sm-4">
                <div class="form-group form-group-default required">                        
-                 <label>{{form.nome_divida.label_tag}}</label>
-                 {{form.nome_divida}}
+                 <label>{{form.nome.label_tag}}</label>
+                 {{form.nome}}
                </div>
              </div>
              <div class="col-sm-4">
                <div class="form-group form-group-default required">
-                 <label>{{form.data_inicio.label_tag}}</label>
-                 {{form.data_inicio}}
+                 <label>{{form.data_prevista.label_tag}}</label>
+                 {{form.data_prevista}}
                </div>
              </div>
              <div class="col-sm-4">
                <div class="form-group form-group-default required">
-                 <label>{{form.data_atual.label_tag}}</label>
-                 {{form.data_atual}}
+                 <label>{{form.imagem_produto.label_tag}}</label>
+                 {{form.imagem_produto}}
                </div>
              </div>
            </div>
            <div class="row">
              <div class="col-sm-4">
                <div class="form-group form-group-default required">
-                 <label>{{form.data_fim.label_tag}}</label>
-                 {{form.data_fim}}
-               </div>
-             </div>
-             <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.id_parcela.label_tag}}</label>
-                 <select class="form-control" id="id_parcela" name="id_parcela">
-                  <option value={{form.id_parcela}}</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_parcela.label_tag}}</label>
-                 {{form.valor_parcela}}
-               </div>
-             </div>
-           </div>
-           <div class="row">
-             <div class="col-sm-4">
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_divida.label_tag}}</label>
-                 {{form.valor_divida}}
-               </div>
-             </div>
-             <div class="col-sm-4">               
-               <div class="form-group form-group-default required">
-                 <label>{{form.valor_pago.label_tag}}</label>
-                 {{form.valor_pago}}
+                 <label>{{form.link.label_tag}}</label>
+                 {{form.link}}
                </div>
              </div>
            </div>
@@ -124,9 +96,7 @@
 <script>
   $(document).ready(function() {
          //Input mask
-         $('#data_inicio').mask("99/99/9999");
-         $('#data_atual').mask("99/99/9999");
-         $('#data_fim').mask("99/99/9999");
+         $('#data_prevista').mask("99/99/9999");
        });
 
       //Submit form

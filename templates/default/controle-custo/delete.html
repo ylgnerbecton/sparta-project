@@ -2,7 +2,7 @@
 
 {% block page_info %}
 <li>
- <b>Divídas</b>
+ <b>Controle de Custo</b>
 </li>
 <li>
  <a class="active">Deletar</a>
@@ -15,7 +15,7 @@
  <div class="panel panel-transparent">
   <div class="panel-heading">
    <div class="panel-title">
-    Divídas
+    Controle de Custo
   </div>
   <div class="row">
     <!-- BASIC DATA -->
@@ -27,7 +27,7 @@
         <div class="col-sm-6">
          <form action="" method="post">
           {% csrf_token %}
-          <p>Tem certeza que deseja deletar essa divida "{{ object }}"?</p>
+          <p>Tem certeza que deseja deletar um controle de custo "{{ object }}"?</p>
           <input type="submit" value="Confirm" />
         </form>
       </div>

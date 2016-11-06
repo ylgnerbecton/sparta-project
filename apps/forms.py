@@ -36,6 +36,7 @@ class DespesaForm(forms.Form):
 class DividaForm(forms.Form):
     nome_divida = forms.CharField(max_length=45, required=False, label="Nome da Divida")
     data_inicio = forms.DateField(required=False, label="Data Inicio")
+    data_atual = forms.DateField(required=False, label="Data Atual")
     data_fim = forms.DateField(required=False, label="Data Fim")
     id_parcela = forms.ModelChoiceField('Parcela', required=False, widget=forms.Select, label="Parcelas do Produto")
     valor_parcela = forms.IntegerField(required=False, label="Valor Parcela")
@@ -52,6 +53,10 @@ class DividaForm(forms.Form):
         # Parcela Fields widget
         self.fields['id_parcela'].widget.attrs['class'] = 'form-control'
         self.fields['id_parcela'].queryset = Parcela.objects.all()
+
+        # Data Início Fields widget
+        self.fields['data_atual'].widget.attrs['class'] = 'form-control'
+        self.fields['data_atual'].widget.attrs['placeholder'] = 'Data Atual'
 
         # Data Início Fields widget
         self.fields['data_inicio'].widget.attrs['class'] = 'form-control'
@@ -76,6 +81,7 @@ class DividaForm(forms.Form):
     pass
 
 class ItensDesejadosForm(forms.Form):
+    data_prevista = forms.DateField(required=False, label="Data Prevista de Compra")
     nome = forms.CharField(max_length=45, label="Nome do Item")
     valor = forms.IntegerField(required=False, label="Valor do Item")
     link = forms.URLField(required=False, label="Link")
@@ -86,6 +92,10 @@ class ItensDesejadosForm(forms.Form):
         # Nome Fields widget
         self.fields['nome'].widget.attrs['class'] = 'form-control'
         self.fields['nome'].widget.attrs['placeholder'] = 'Digite o Nome do Item'
+
+        # Nome Fields widget
+        self.fields['data_prevista'].widget.attrs['class'] = 'form-control'
+        self.fields['data_prevista'].widget.attrs['placeholder'] = 'Digite a Data Prevista de Compra'
 
         # Valor Fields widget
         self.fields['valor'].widget.attrs['class'] = 'form-control'

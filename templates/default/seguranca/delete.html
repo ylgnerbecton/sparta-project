@@ -2,7 +2,7 @@
 
 {% block page_info %}
 <li>
- <b>Empresa</b>
+ <b>Segurança</b>
 </li>
 <li>
  <a class="active">Deletar</a>
@@ -15,7 +15,7 @@
  <div class="panel panel-transparent">
   <div class="panel-heading">
    <div class="panel-title">
-    Empresa
+    Segurança
   </div>
   <div class="row">
     <!-- BASIC DATA -->
@@ -27,15 +27,14 @@
         <div class="col-sm-6">
          <form action="" method="post">
           {% csrf_token %}
-          <p>Tem certeza
-           que deseja deletar a empresa "{{ object }}"?</p>
-           <input type="submit" value="Confirm" />
-         </form>
-       </div>
-     </div>
-   </div>
- </div>
- <!-- END PANEL -->
+          <p>Tem certeza que deseja deletar conta "{{ object }}"?</p>
+          <input type="submit" value="Confirm" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END PANEL -->
 </div>
 <!-- END BASIC DATA -->
 </div>

@@ -35,7 +35,9 @@ class Parcela(models.Model):
 
 class ItensDesejados(models.Model):
 	id_itemdesejado = models.AutoField(primary_key=True)
+	data_prevista = models.DateField(default=datetime.now, null=True, blank=True, verbose_name="Data Prevista de Compra")
 	nome = models.CharField(max_length=45, null=False, blank=False, verbose_name="Nome do Item")
+	imagem_produto = models.ImageField(upload_to="default/users",null=True, blank=True)
 	valor = models.IntegerField(null=True, blank=True, verbose_name="Valor do Item")
 	link = models.URLField(null=True, blank=True, verbose_name="Link")
 	def __str__(self):

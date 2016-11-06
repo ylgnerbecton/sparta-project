@@ -2,7 +2,7 @@
 
 {% block page_info %}
 <li>
-  <b>Divída</b>
+  <b>Controle de Custo</b>
 </li>
 <li>
   <a class="active">Detalhes</a>
@@ -15,7 +15,7 @@
    <div class="panel panel-transparent">
       <div class="panel-heading">
          <div class="panel-title">
-            Divída
+            Controle de Custo
          </div>
          <div class="row">
             <!-- BASIC DATA -->
@@ -26,56 +26,62 @@
                      <div class="row clearfix">
                         <div class="col-sm-6">
                            <div class="form-group form-group-default required" aria-required="true">
-                              <label>Divída:</label>
-                              {{object.nome_divida}}
+                              <label>Nome:</label>
+                              {{object.nome}}
                            </div>
                         </div>
                         <div class="col-sm-6">
                         <div class="form-group form-group-default required" aria-required="true">
-                              <label>Data Início:</label>
-                              {{object.data_inicio}}
+                              <label>Data:</label>
+                              {{object.data}}
                            </div>
                         </div>
                      </div>
                      <div class="row">
                         <div class="col-sm-6">
                            <div class="form-group form-group-default required" aria-required="true">
-                              <label>Data Atual:</label>
-                              {{object.data_atual}}
+                              <label>Tipo de Renda:</label>
+                              {{object.id_renda}}
                            </div>
                         </div>
                         <div class="col-sm-6">
                            <div class="form-group form-group-default required" aria-required="true">
-                              <label>Data Fim:</label>
-                              {{object.data_fim}}
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-sm-6">
-                           <div class="form-group form-group-default required" aria-required="true">
-                              <label>Parcelas:</label>
-                              {{object.id_parcela}}
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group form-group-default required" aria-required="true">
-                              <label>Vl. Parcela:</label>
-                              {{object.valor_parcela}}
+                              <label>Vl. Ganho Renda:</label>
+                              {{object.valor_ganho_renda}}
                            </div>
                         </div>
                      </div>
                      <div class="row">
                         <div class="col-sm-6">
                            <div class="form-group form-group-default required" aria-required="true">
-                              <label>Vl. Total Divída:</label>
-                              {{object.valor_divida}}
+                              <label>Tipo de Despesa:</label>
+                              {{object.id_despesa}}
                            </div>
                         </div>
                         <div class="col-sm-6">
                            <div class="form-group form-group-default required" aria-required="true">
-                              <label>Vl. Pago:</label>
-                              {{object.valor_pago}}
+                              <label>Vl. Anterior:</label>
+                              {{object.valor_anterior_despesa}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Vl. Retirado:</label>
+                              {{object.valor_retirado_despesa}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Vl. Atual:</label>
+                              {{object.valor_atual_despesa}}
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group form-group-default required" aria-required="true">
+                              <label>Comentário:</label>
+                              {{object.comentario}}
                            </div>
                         </div>
                      </div>

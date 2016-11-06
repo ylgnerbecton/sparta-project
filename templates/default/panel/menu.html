@@ -24,13 +24,25 @@
         <ul class="sub-menu">
             <!-- MENU ITEM -->
             <li class="">
-                <a href="/framework/dashboard/user/list/">Usuários</a>
+                <a href="/sparta/divida/list/">Divída</a>
                 <span class="icon-thumbnail">US</span>
             </li>
             <!-- END MENU ITEM -->
             <!-- SECOND MENU ITEM -->
             <li class="">
-                <a href="/framework/dashboard/company/list/">Empresas</a>
+                <a href="/sparta/controlecusto/list/">Controle de Custo</a>
+                <span class="icon-thumbnail">EMP</span>
+            </li>
+            <!-- END MENU ITEM -->
+            <!-- SECOND MENU ITEM -->
+            <li class="">
+                <a href="/sparta/itensdesejados/list/">Itens Desejados</a>
+                <span class="icon-thumbnail">EMP</span>
+            </li>
+            <!-- END MENU ITEM -->
+            <!-- SECOND MENU ITEM -->
+            <li class="">
+                <a href="/sparta/seguranca/list/">Segurança</a>
                 <span class="icon-thumbnail">EMP</span>
             </li>
             <!-- END MENU ITEM -->
@@ -38,117 +50,7 @@
         <!-- END SECOND LEVEL -->
     </li>
     <!-- END MENU ITEM -->
-    <!-- MENU ITEM -->
-    <li class="">
-        <a href="javascript:;">
-            <span class="title">Logística</span>
-            <span class="arrow"></span>
-        </a>
-        <span class="icon-thumbnail"><i class="pg-grid"></i></span>
-        <!-- SECOND LEVEL -->
-        <ul class="sub-menu">
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/boletim_list/">Boletins</a>
-                <span class="icon-thumbnail">BLT</span>
-            </li>
-            <li class="">
-                <a href="/framework/botboletim_list/">Boletins Capturados</a>
-                <span class="icon-thumbnail">BCT</span>
-            </li>
-            <li class="">
-                <a href="/framework/boletim_nao_preenchidos/">Boletins Não Preenchidos</a>
-                <span class="icon-thumbnail">BNP</span>
-            </li>
-            <li class="">
-                <a href="/framework/boletim_baixa/">Baixa Boletim</a>
-                <span class="icon-thumbnail">BXB</span>
-            </li>
-            <li class="">
-                <a href="/framework/boletim_lote/start/">Boletins em lotes</a>
-                <span class="icon-thumbnail">BL</span>
-            </li>
-            <li class="">
-                <a href="/framework/contagem/">Monitoramento</a>
-                <span class="icon-thumbnail">MNT</span>
-            </li>
-            <li class="">
-                <a href="/framework/cbhpm_list/">CBHPM</a>
-                <span class="icon-thumbnail">CBM</span>
-            </li>
-            <li class="">
-                <a href="/framework/atividademedica_list/">Atividade Médica</a>
-                <span class="icon-thumbnail">AM</span>
-            </li>
-            <li class="">
-                <a href="/framework/reembolso_list/">Reembolso</a>
-                <span class="icon-thumbnail">RB</span>
-            </li>
-            <!-- END MENU ITEM -->
-        </li>
     </ul>
     <!-- MENU ITEM -->
-    {% if request.user.is_admin == True %}
-    <li class="">
-        <a href="javascript:;">
-            <span class="title">Cadastros</span>
-            <span class="arrow"></span>
-        </a>
-        <span class="icon-thumbnail"><i class="pg-grid"></i></span>
-        <!-- SECOND LEVEL -->
-        <ul class="sub-menu">
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/tipoconvenio_list/">Tipo Convenio</a>
-                <span class="icon-thumbnail">TC</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/convenio_list/">Convenio</a>
-                <span class="icon-thumbnail">CVN</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/especialidademedica_list/">Especialidade Médica</a>
-                <span class="icon-thumbnail">EM</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/medico_list/">Médico</a>
-                <span class="icon-thumbnail">MD</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/plano_list/">Plano</a>
-                <span class="icon-thumbnail">PLN</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/statusboletim_list/">Status Boletim</a>
-                <span class="icon-thumbnail">SB</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/hospital_list/">Hospital</a>
-                <span class="icon-thumbnail">HP</span>
-            </li>
-            <!-- END MENU ITEM -->
-            <!-- SECOND MENU ITEM -->
-            <li class="">
-                <a href="/framework/procedimento_list/">Procedimento</a>
-                <span class="icon-thumbnail">PCM</span>
-            </li>
-            <!-- END MENU ITEM -->            
-        </ul>
-        <!-- END SECOND LEVEL -->
-    </li>
-    <!-- END MENU ITEM -->
-    {% endif %}
 </ul>
 <div class="clearfix"></div>
