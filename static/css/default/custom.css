@@ -1,0 +1,63 @@
+#form-boletim #qtd_dias[readonly]{
+    color: black;
+}
+
+table tr.yellow td{
+    background: #ffcc13;
+    color: #FFFFFF;
+}
+table tr a [class^="pg-"], [class*=" pg-"]{
+    color: white;
+}
+table tr.blue td{
+    background: #39b3f1;
+    color: #FFFFFF;
+}
+table tr.red td{
+    background: #f44336;
+    color: #FFFFFF;
+}
+table tr.green td{
+    background: green;
+    color: #FFFFFF;
+}
+.legendas .legenda{
+    float: left;
+    width: 140px;
+}
+.legendas .legenda.larger{
+    width: 190px;
+}
+.legendas .legenda .yellow{
+    background: #ffcc13;
+    width: 30px;
+    height: 20px;
+    float: left;
+}
+.legendas .legenda .red{
+    background: #f44336;
+    width: 30px;
+    height: 20px;
+    float: left;
+}
+.legendas .legenda .blue{
+    background: #39b3f1;
+    width: 30px;
+    height: 20px;
+    float: left;
+}
+
+.legendas .legenda .green{
+    background: #09ab3b;
+    width: 30px;
+    height: 20px;
+    float: left;
+}
+
+.legendas .legenda span{
+    margin-left: 10px;
+}
+
+.datepicker-dropdown .active.day{
+    color: #FFFFFF
+}

@@ -1,0 +1,310 @@
+{% extends "default/panel/layout.html" %}
+{% load staticfiles %}
+
+{% block page_info %}
+<li>
+  <b>Empresa</b>
+</li>
+<li>
+  <a class="active">Editar</a>
+</li>    
+{% endblock %}
+
+{% block content %}
+{% if context %}
+{%  for title, value in context.items %}
+{{title}} : {{value}} <br>
+{% endfor %}
+{% endif %}
+<div id="rootwizard" class="m-t-50">
+ <!-- Nav tabs -->
+ <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
+   <li class="active">
+     <a data-toggle="tab" href="#tab1"><i class="fa fa-bars tab-icon"></i>
+      <span>
+       Dados da empresa
+     </span>
+   </a>
+ </li>
+ <li class="">
+   <a data-toggle="tab" href="#tab2"><i class="fa fa-map-marker tab-icon"></i> 
+    <span>
+     Endereço
+   </span>
+ </a>
+</li>
+{% block subclass_itens %}{% endblock %}     
+</ul>
+<!-- Tab panes -->
+
+<form autocomplete="off"  method="post" enctype="multipart/form-data" role="form" id="form-personal" novalidate="novalidate">
+  {% csrf_token %}
+
+  <div class="tab-content">
+   <div class="tab-pane padding-20 active slide-left" id="tab1">
+     <div class="row row-same-height">
+       <div class="col-md-5 b-r b-dashed b-grey ">
+         <div class="padding-30 m-t-50">
+           <h2></p>
+             <p class="small hint-text"></p>
+           </div>
+         </div>
+         <div class="col-md-7">
+           <div class="padding-30">               
+             <p>Dados</p>
+             <div class="form-group-attached">
+               <div class="row clearfix">
+                 <div class="col-sm-6">
+                   <div class="form-group form-group-default required">                        
+                     <label>{{form.cnpj.label_tag}}</label>
+                     {{form.cnpj}}
+                   </div>
+                 </div>
+                 <div class="col-sm-6">
+                   <div class="form-group form-group-default">
+                     <label>{{form.ie.label_tag}}</label>
+                     {{form.ie}}
+                   </div>
+                 </div>
+               </div>
+               <div class="form-group form-group-default required">
+                 <label>{{form.razaosocial.label_tag}}</label>
+                 {{form.razaosocial}}
+               </div>
+               <div class="form-group form-group-default required">
+                 <label>{{form.nomefantasia.label_tag}}</label>
+                 {{form.nomefantasia}}
+               </div>
+             </div>
+             <br>
+             <p>Tipo</p>
+             <div class="form-group-attached">
+               <div class="row clearfix">
+                 <div class="col-sm-12">
+                   <div class="form-group form-group-default">
+                     <label>{{form.tipo_empresa.label_tag}}</label>
+                     {{form.tipo_empresa}}
+                   </div>
+                 </div>
+               </div>
+               <p>Telefone</p>
+               <table id="id_phone_table" >
+                <thead>
+                  <tr>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Ramal</th>
+                    <th scope="col">Contato</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for form in formset.forms %}
+                  <tr id="{{ form.prefix }}-row">
+                    <td style="text-align:center;">{{ form.tipo_telefone }}</td>
+                    <td>{{ form.numero }}</td>
+                    <td>{{ form.ramal }}</td>
+                    <td>{{ form.nome_contato }}</td>
+                    <td></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+                {{formset.management_form}}
+              </table>               
+              <div class="row clearfix">                                          
+              </div>
+            </div>               
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane slide-left padding-20" id="tab2">
+     <div class="row row-same-height">
+       <div class="col-md-5 b-r b-dashed b-grey ">
+         <div class="padding-30 m-t-50">
+           <h2></p>
+             <p class="small hint-text"></p>
+           </div>
+         </div>
+         <div class="col-md-7">
+           <div class="padding-30">                        
+             <p>Endereço</p>
+             <div class="form-group-attached">                   
+               <div class="row clearfix">
+                 <div class="col-sm-4">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.pais.label_tag}}</label>
+                     {{form.pais}}
+                   </div>
+                 </div>
+                 <div class="col-sm-4">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.estado.label_tag}}</label>
+                     {{form.estado}}
+                   </div>
+                 </div>
+                 <div class="col-sm-4">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.cep.label_tag}}</label>
+                     {{form.cep}}
+                   </div>
+                 </div>
+               </div>
+               <div class="row clearfix">
+                 <div class="col-sm-3">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.cidade.label_tag}}</label>
+                     {{form.cidade}}
+                   </div>
+                 </div>
+                 <div class="col-sm-9">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.bairro.label_tag}}</label>
+                     {{form.bairro}}
+                   </div>
+                 </div>
+               </div>
+               <div class="form-group form-group-default required">
+                 <label>{{form.rua.label_tag}}</label>
+                 {{form.rua}}
+               </div>
+               <div class="row clearfix">
+                 <div class="col-sm-3">
+                   <div class="form-group form-group-default required">
+                     <label>{{form.numeroed.label_tag}}</label>
+                     {{form.numeroed}}
+                   </div>
+                 </div>
+                 <div class="col-sm-9">
+                   <div class="form-group form-group-default">
+                     <label>{{form.complemento.label_tag}}</label>
+                     {{form.complemento}}
+                   </div>
+                 </div>
+               </div>
+               <div class="form-group form-group-default required">
+                 <label>{{form.pontoreferencia.label_tag}}</label>
+                 {{form.pontoreferencia}}
+               </div>
+             </div>               
+           </div>
+         </div>
+       </div>
+     </div>
+     {% block subclass_form %}{% endblock %}             
+     <div class="padding-20 bg-white">
+       <ul class="pager wizard">
+         <li class="next">
+           <button class="btn btn-primary btn-cons pull-right" type="button">
+             <span>Próximo</span>
+           </button>
+         </li>
+         <li class="next finish hidden">
+           <button class="btn btn-primary btn-cons btn-animated from-left fa fa-cog pull-right" type="button">
+             <span>Cadastrar</span>
+           </button>
+         </li>
+         <li class="previous first hidden">
+           <button class="btn btn-default btn-cons btn-animated from-left fa fa-cog pull-right" type="button">
+             <span>Primeiro</span>
+           </button>
+         </li>
+         <li class="previous">
+           <button class="btn btn-default btn-cons pull-right" type="button">
+             <span>Anterior</span>
+           </button>
+         </li>
+       </ul>
+     </div>
+   </form>
+ </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+
+<script src="{% static 'js/default/jquery.inputmask.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/default/form_wizard.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/default/jquery.bootstrap.wizard.min.js' %}" type="text/javascript">
+</script>
+<script>
+  $(document).ready(function() {
+
+        // multiple fields
+        $(function() {
+          $('#id_phone_table tbody tr').formset()
+        })
+
+         //Input mask
+         $("#id_cnpj").mask("99.999.999/9999-99"); <!-- CNPJ EXEMPLE : 06.990.590/0002-04 -->
+         $("#id_cep").mask("99.999-999");
+
+         //Select2
+         $("#id_tipo_empresa").select2();
+       });
+
+  var hostname = location.host
+
+      //Service CNPJ
+      function get_cnpj_data(value){
+       var cnpj = value.replace(/\D/g,'');
+       var url = "http://"+hostname+"/framework/service/cnpj/"
+       if(cnpj){
+        $.ajax({
+          type: 'GET',
+          url: url,
+          data:{'cnpj':cnpj},
+          dataType:'json',
+          success: function(response) {
+            console.log(response)
+            document.getElementById("id_razaosocial").value = response.nome
+            if (response.fantasia){
+              document.getElementById("id_nomefantasia").value = response.fantasia
+            }else{
+              document.getElementById("id_nomefantasia").value = response.nome
+            }
+            document.getElementById("id_pais").value = 'Brazil'
+            document.getElementById("id_estado").value = response.uf
+            document.getElementById("id_cep").value = response.cep
+            document.getElementById("id_cidade").value = response.municipio
+            document.getElementById("id_bairro").value = response.bairro
+            document.getElementById("id_rua").value = response.logradouro
+            document.getElementById("id_numeroed").value = response.numero
+            document.getElementById("id_complemento").value = response.complemento
+          },
+          error: function(response) {
+            console.log(response)
+          }
+        });
+      }
+    };
+      //Service CEP
+      function get_cep_data(value){
+       var cep = value.replace(/\D/g,'');
+       var url = "http://"+hostname+"/framework/service/cep/"
+       if(cep){
+        $.ajax({
+          type: 'GET',
+          url: url,
+          data:{'cep':cep},
+          dataType:'json',
+          success: function(response) {
+            console.log(response)
+            document.getElementById("id_estado").value = response.estado
+            document.getElementById("id_cidade").value = response.cidade
+            document.getElementById("id_bairro").value = response.bairro
+            document.getElementById("id_rua").value = response.logradouro
+          },
+          error: function(response) {
+            console.log(response)
+          }
+        });
+      }
+    };
+
+      //Submit form
+      $( ".finish" ).click(function() {
+        $( "#form-personal" ).submit();
+      });
+
+    </script>
+    {% endblock %}

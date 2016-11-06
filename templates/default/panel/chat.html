@@ -1,0 +1,170 @@
+{% load staticfiles %}
+<!-- VIEW BG -->
+<div class="view bg-white">
+   <!-- BEGIN VIEW HEADER -->
+   <div class="navbar navbar-default">
+      <div class="navbar-inner">
+         <!-- CONTROLER -->
+         <a href="javascript:;" class="inline action p-l-10 link text-master" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+         <i class="pg-plus"></i>
+         </a>
+         <!-- END CONTROLER -->
+         <div class="view-heading">
+            Chat List
+            <div class="fs-11">Show All</div>
+         </div>
+         <!-- CONTROLER -->
+         <a href="#" class="inline action p-r-10 pull-right link text-master">
+         <i class="pg-more"></i>
+         </a>
+         <!-- END CONTROLER -->
+      </div>
+   </div>
+   <!-- END VIEW HEADER -->
+   <!-- CHAT USER -->
+   <div data-init-list-view="ioslist" class="list-view boreded no-top-border">
+      <!-- GROUP CONTAINER -->
+      <div class="list-view-group-container">
+         <div class="list-view-group-header text-uppercase">
+            a
+         </div>
+         <ul>
+            <!-- LIST ITEM -->
+            <li class="chat-user-list clearfix">
+               <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                  <span class="col-xs-height col-middle">
+                  <span class="thumbnail-wrapper d32 circular bg-success">
+                  <img width="34" height="34" alt="" data-src-retina="{% static 'img/default/1x.jpg' %}" data-src="{% static 'img/default/1.jpg' %}" src="{% static 'img/default/1x.jpg' %}" class="col-top">
+                  </span>
+                  </span>
+                  <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                     <span class="text-master">ava flores</span>
+                     <span class="block text-master hint-text fs-12">Hello there</span>
+                  </p>
+               </a>
+            </li>
+            <!-- END LIST ITEM -->
+         </ul>
+      </div>
+      <!-- END GROUP CONTAINER -->
+      <!-- GROUP CONTAINER -->
+      <div class="list-view-group-container">
+         <div class="list-view-group-header text-uppercase">b</div>
+         <ul>
+            <!-- LIST ITEM -->
+            <li class="chat-user-list clearfix">
+               <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                  <span class="col-xs-height col-middle">
+                  <span class="thumbnail-wrapper d32 circular bg-success">
+                  <img width="34" height="34" alt="" data-src-retina="{% static 'img/default/2x.jpg' %}" data-src="{% static 'img/default/2.jpg' %}" src="{% static 'img/default/2x.jpg' %}" class="col-top">
+                  </span>
+                  </span>
+                  <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                     <span class="text-master">bella mccoy</span>
+                     <span class="block text-master hint-text fs-12">Hello there</span>
+                  </p>
+               </a>
+            </li>
+            <!-- END LIST ITEM -->
+            <!-- LIST ITEM -->
+            <li class="chat-user-list clearfix">
+               <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                  <span class="col-xs-height col-middle">
+                  <span class="thumbnail-wrapper d32 circular bg-success">
+                  <img width="34" height="34" alt="" data-src-retina="{% static 'img/default/3x.jpg' %}" data-src="{% static 'img/default/3.jpg' %}" src="{% static 'img/default/3x.jpg' %}" class="col-top">
+                  </span>
+                  </span>
+                  <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                     <span class="text-master">bob stephens</span>
+                     <span class="block text-master hint-text fs-12">Hello there</span>
+                  </p>
+               </a>
+            </li>
+            <!-- END LIST ITEM -->
+         </ul>
+      </div>
+      <!-- END GROUP CONTAINER -->
+   </div>
+   <!-- END CHAT USER -->
+</div>
+<!-- END VIEW BG -->
+<!-- CONVERSATION VIEW  -->
+<div class="view chat-view bg-white clearfix">
+   <!-- HEADER -->
+   <div class="navbar navbar-default">
+      <div class="navbar-inner">
+         <a href="javascript:;" class="link text-master inline action p-l-10" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+         <i class="pg-arrow_left"></i>
+         </a>
+         <div class="view-heading">
+            John Smith
+            <div class="fs-11 hint-text">Online</div>
+         </div>
+         <a href="#" class="link text-master inline action p-r-10 pull-right ">
+         <i class="pg-more"></i>
+         </a>
+      </div>
+   </div>
+   <!-- END HEADER -->
+   <!-- CONVERSATION -->
+   <div class="chat-inner" id="my-conversation">
+      <!-- FROM ME MESSAGE -->
+      <div class="message clearfix">
+         <div class="chat-bubble from-me">
+            Hello there
+         </div>
+      </div>
+      <!-- END FROM ME MESSAGE -->
+      <!-- FROM THEM MESSAGE -->
+      <div class="message clearfix">
+         <div class="profile-img-wrapper m-t-5 inline">
+            <img class="col-top" width="30" height="30" src="{% static 'img/default/avatar_small.jpg' %}" alt="" data-src="{% static 'img/default/avatar_small.jpg' %}" data-src-retina="{% static 'img/default/avatar_small2x.jpg' %}">
+         </div>
+         <div class="chat-bubble from-them">
+            Hey
+         </div>
+      </div>
+      <!-- END FROM THEM MESSAGE -->
+      <!-- FROM ME MESSAGE -->
+      <div class="message clearfix">
+         <div class="chat-bubble from-me">
+            Did you check out Pages framework ?
+         </div>
+      </div>
+      <!-- END FROM ME MESSAGE -->
+      <!-- FROM ME MESSAGE -->
+      <div class="message clearfix">
+         <div class="chat-bubble from-me">
+            Its an awesome chat
+         </div>
+      </div>
+      <!-- END FROM ME MESSAGE -->
+      <!-- FROM THEM MESSAGE -->
+      <div class="message clearfix">
+         <div class="profile-img-wrapper m-t-5 inline">
+            <img class="col-top" width="30" height="30" src="{% static 'img/default/avatar_small.jpg' %}" alt="" data-src="{% static 'img/default/avatar_small.jpg' %}" data-src-retina="{% static 'img/default/avatar_small2x.jpg' %}">
+         </div>
+         <div class="chat-bubble from-them">
+            Yea
+         </div>
+      </div>
+      <!-- END FROM THEM MESSAGE -->
+   </div>
+   <!-- END CONVERSATION -->
+   <!-- CHAT INPUT -->
+   <div class="b-t b-grey bg-white clearfix p-l-10 p-r-10">
+      <div class="row">
+         <div class="col-xs-1 p-t-15">
+            <a href="#" class="link text-master"><i class="fa fa-plus-circle"></i></a>
+         </div>
+         <div class="col-xs-8 no-padding">
+            <input type="text" class="form-control chat-input" data-chat-input="" data-chat-conversation="#my-conversation" placeholder="Say something">
+         </div>
+         <div class="col-xs-2 link text-master m-l-10 m-t-15 p-l-10 b-l b-grey col-top">
+            <a href="#" class="link text-master"><i class="pg-camera"></i></a>
+         </div>
+      </div>
+   </div>
+   <!-- END CHAT INPUT -->
+</div>
+<!-- END CONVERSATION VIEW -->

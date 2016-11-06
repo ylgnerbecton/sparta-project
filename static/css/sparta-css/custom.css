@@ -1,0 +1,165 @@
+#form-boletim #qtd_dias[readonly]{
+	color: black;
+}
+.table ul.buttons li a i{color: #626262}
+.table ul.buttons li a:hover i{color: #111111; font-size: 16.5px !important; cursor: pointer;}
+.table ul.buttons li {display: inline-block;list-style: none;margin-right: 15px;color:initial;}
+#tableBoletimList tr td i{
+	color: #FFFFFF;
+}
+table tr.yellow td:first-child{
+	background: #ffcc13;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+table tr a [class^="pg-"], [class*=" pg-"]{
+	color: black;
+}
+.table tbody tr td[class*='sorting_'] {
+	color: black;
+}
+
+.table tbody tr.gray td:first-child {
+	color: #000;
+	background: #e2e2da;
+}
+
+table tr.blue td:first-child{
+	background: #48b0f7;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+table tr.red td:first-child{
+	background: #f55753;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+table tr.green td:first-child{
+	background: #0da899;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+table tr.black td:first-child{
+	background: #000;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+.legendas .legenda{
+	float: left;
+	width: 140px;
+}
+.legendas .legenda.larger{
+	width: 190px;
+}
+.legendas .legenda .yellow{
+	background: #ffcc13;
+	width: 30px;
+	height: 20px;
+	float: left;
+}
+.legendas .legenda .red{
+	background: #f55753;
+	width: 30px;
+	height: 20px;
+	float: left;
+}
+.legendas .legenda .blue{
+	background: #48b0f7;
+	width: 30px;
+	height: 20px;
+	float: left;
+}
+
+.legendas .legenda .green{
+	background: #0da899;
+	width: 30px;
+	height: 20px;
+	float: left;
+}
+
+.legendas .legenda span{
+	margin-left: 10px;
+}
+
+.datepicker-dropdown .active.day{
+	color: #FFFFFF
+}
+
+.title {
+	color: white !important;
+}
+.dash-card {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 3px 3px 0 0;
+	transition: opacity 0.2s
+	-webkit-transition: opacity 0.2s;
+}
+.dash-card:hover {
+	animation: soften 0.2s;
+	opacity: 0.8;
+	cursor: pointer;
+}
+.dash-card h6 {
+	display: block;
+	position: relative;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 6.5em;
+}
+.dash-card img {
+	position:absolute;
+	left: -100%;
+	right: -100%;
+	top: -100%;
+	bottom: -100%;
+	margin: auto; 
+	min-height: 100%;
+	min-width: 100%;
+}
+.full-dash-card {
+	position: relative;
+	transition: all 1.2s;
+}
+.green {
+	background-color: #0da899 !important;
+}
+.red {
+	background-color: #f55753 !important;
+}
+
+.blue {
+	background: #48b0f7;
+}
+
+.blueviolet {
+	background: #8A2BE2;
+}
+.purple {
+	background: #800080;
+}
+
+.yellow {
+	background: #ffcc13;
+}
+.black {
+	background: #000000;
+}
+
+.mg-bottom {
+	margin-bottom: 10px;
+}
+
+.mg-left {
+	margin-left: 20px;
+}
+
+.mg-top {
+	margin-top: 20px;
+}
+
+.black {
+	background: #000;
+}

@@ -1,0 +1,44 @@
+<!--QUICKVIEW -->
+<div id="quickview" class="quickview-wrapper" data-pages="quickview">
+   {% include 'default/panel/quickview-tabs.html' %}
+   <a class="btn-link quickview-toggle" data-toggle-element="#quickview" data-toggle="quickview"><i class="pg-close"></i></a>
+   <!-- TAB PANES -->
+   <div class="tab-content">
+      <!-- NOTES -->
+      <div class="tab-pane fade  in no-padding" id="quickview-notes">
+         <div class="view-port clearfix quickview-notes" id="note-views">
+            {% include 'default/panel/notes.html' %}
+         </div>
+      </div>
+      <!-- END NOTES -->
+      <!-- ALERTS -->
+      <div class="tab-pane fade no-padding" id="quickview-alerts">
+         <div class="view-port clearfix" id="alerts">
+            <!-- ALERT VIEW -->
+            <div class="view bg-white">
+               <!-- ALERT HEADER -->
+               <div class="navbar navbar-default navbar-sm">
+                  {% include 'default/panel/alerts-header.html' %}
+               </div>
+               <!-- END ALERT HEADER !-->
+               <!-- ALERT LIST -->
+               <div data-init-list-view="ioslist" class="list-view boreded no-top-border">
+                  {% include 'default/panel/alerts.html' %}
+               </div>
+               <!-- END ALERT LIST -->
+            </div>
+            <!-- END ALERT VIEW -->
+         </div>
+      </div>
+      <!-- END ALERTS -->
+      <!-- CHAT -->
+      <div class="tab-pane fade in active no-padding" id="quickview-chat">
+         <div class="view-port clearfix" id="chat">
+            {% include 'default/panel/chat.html' %}
+         </div>
+      </div>
+      <!-- END CHAT -->
+   </div>
+   <!-- END TAB PANES -->
+</div>
+<!-- END QUICKVIEW-->

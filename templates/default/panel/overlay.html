@@ -1,0 +1,33 @@
+<!-- OVERLAY -->
+<div class="overlay" style="display: none" data-pages="search">
+   <!-- CONTENT -->
+   <div class="overlay-content has-results m-t-20">
+      <!-- HEADER -->
+      <div class="container-fluid">
+         {% include 'default/panel/overlay-header.html' %}
+      </div>
+      <!-- END HEADER -->
+      <!-- CONTROLS -->
+      <div class="container-fluid">
+         <input id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Search..." autocomplete="off" spellcheck="false">
+         <br>
+         <div class="inline-block">
+            <div class="checkbox right">
+               <input id="checkboxn" type="checkbox" value="1" checked="checked">
+               <label for="checkboxn"><i class="fa fa-search"></i> Search within page</label>
+            </div>
+         </div>
+         <div class="inline-block m-l-10">
+            <p class="fs-13">Press enter to search</p>
+         </div>
+      </div>
+      <!-- END CONSTROLS -->
+      <!-- SEARCH RESULTS -->
+      <div class="container-fluid">
+         {% include 'default/panel/overlay-search.html' %}
+      </div>
+      <!-- END SEARCH RESULTS -->
+   </div>
+   <!-- END CONTENT -->
+</div>
+<!-- END OVERLAY -->

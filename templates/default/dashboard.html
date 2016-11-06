@@ -1,0 +1,154 @@
+{% extends "default/panel/layout.html" %} 
+{% load staticfiles %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block page_info %}
+
+<li>
+	<a class="active">Home</a>
+</li>
+</ul>
+
+<div class="row">
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/maior20/">
+				<div class="dash-card red">
+					<h6 class="title">{{contagem_boletins.greatherthantwenty}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Após 20 Dias</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/naopreenchido/">
+				<div class="dash-card blueviolet">
+					<h6 class="title">{{contagem_boletins.naopreenchido}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Não Preenchidos</p>
+			</div>
+		</div>
+	</div> 
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/menor10/">
+				<div class="dash-card blue">
+					<h6 class="title">{{contagem_boletins.lessthanten}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Até 10 Dias</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/entre1020/">
+				<div class="dash-card yellow">
+					<h6 class="title">{{contagem_boletins.between}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Até 20 Dias</p>
+			</div>
+		</div>
+	</div> 
+
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/entregue/">
+				<div class="dash-card green">
+					<h6 class="title">{{contagem_boletins.delivered}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Entregue</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/all/">
+				<div class="dash-card black">
+					<h6 style="font-size:18px;margin-top:40px" class="title">{{contagem_boletins.all}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Todos os Boletins</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/reembolso_receber/">
+				<div class="dash-card purple">
+					<h6 class="title">{{contagem_boletins.reembolsosreceber}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Total de reembolsos a receber</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/reembolso_list/">
+				<div class="dash-card purple">
+					<h6 style="font-size:18px;margin-top:40px" class="title">R$ {{contagem_boletins.reembolsogeral}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Vl.Ttl  de reembolsos a receber</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/reembolso_recebidos/">
+				<div class="dash-card purple">
+					<h6 style="font-size:18px;margin-top:40px" class="title">R$ {{contagem_boletins.reembolsosrecebido}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Vl.Ttl de reembolsos recebidos</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/maior30/">
+				<div class="dash-card red">
+					<h6 class="title">{{contagem_boletins.greatherthanthirty}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Até 40 Dias</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 full-dash-card">
+		<div>
+			<a href="/framework/maior40/">
+				<div class="dash-card red">
+					<h6 class="title">{{contagem_boletins.greatherthanforty}}</h6>
+				</div>
+			</a>
+			<div class="well">
+				<p>Após 40 Dias</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

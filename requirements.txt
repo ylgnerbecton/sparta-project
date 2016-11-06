@@ -1,0 +1,7 @@
+django==1.9
+django-cors-headers
+Pillow
+mysqlclient
+requests
+gunicorn
+gevent

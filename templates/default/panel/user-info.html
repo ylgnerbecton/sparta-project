@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!-- USER INFO -->
+<div class="visible-lg visible-md m-t-10">
+   <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
+      <!-- USER NAME -->
+      {% if request.user.nome %}
+         <span class="semi-bold">{{request.user.nome}}</span> 
+         {% if request.user.sobrenome %}
+            <span class="text-master">{{request.user.sobrenome}}</span>
+         {% endif %}
+      {% else %}
+         <span class="semi-bold">{{request.user.email}}</span> 
+      {% endif %}
+      <!-- END USER NAME -->
+   </div>
+   <div class="dropdown pull-right">
+      <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="thumbnail-wrapper d32 circular inline m-t-5">
+            <!-- USER FOTO -->
+            {% if request.user.foto %}
+               <img src="{{MEDIA_URL}}{{request.user.foto}}" alt="" data-src="{{MEDIA_URL}}{{request.user.foto}}" data-src-retina="{{MEDIA_URL}}{{request.user.foto}}" width="32" height="32">
+            {% else %}
+               <img src="{% static 'img/default/avatar.jpg' %}" alt="" data-src="{% static 'img/default/avatar.jpg' %}" data-src-retina="{% static 'img/default/avatar_small2x.jpg' %}" width="32" height="32">
+            {% endif %}
+            <!-- END USER FOTO -->
+         </span>
+      </button>
+      <!-- USER MENU -->
+      <ul class="dropdown-menu profile-dropdown" role="menu">
+         <li><a href="/framework/dashboard/profile/"><i class="pg-settings_small"></i>Perfil</a></li>
+         <li class="bg-master-lighter">
+            <a href="/framework/auth/logout" class="clearfix">
+               <span class="pull-left">Logout</span>
+               <span class="pull-right"><i class="pg-power"></i></span>
+            </a>
+         </li>
+      </ul>
+      <!-- END USER MENU -->
+   </div>
+</div>
+<!-- END USER INFO -->

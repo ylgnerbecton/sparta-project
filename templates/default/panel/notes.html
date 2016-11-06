@@ -1,0 +1,66 @@
+<!-- NOTE LIST -->
+<div class="view list" id="quick-note-list">
+   <div class="toolbar clearfix">
+      <ul class="pull-right ">
+         <li>
+            <a href="#" class="delete-note-link"><i class="fa fa-trash-o"></i></a>
+         </li>
+         <li>
+            <a href="#" class="new-note-link" data-navigate="view" data-view-port="#note-views" data-view-animation="push"><i class="fa fa-plus"></i></a>
+         </li>
+      </ul>
+      <button class="btn-remove-notes btn btn-xs btn-block" style="display:none"><i class="fa fa-times"></i> Delete</button>
+   </div>
+   <ul>
+      <!-- NOTE ITEM -->
+      <li data-noteid="1" data-navigate="view" data-view-port="#note-views" data-view-animation="push">
+         <div class="left">
+            <!-- NOTE ACTION -->
+            <div class="checkbox check-warning no-margin">
+               <input id="qncheckbox1" type="checkbox" value="1">
+               <label for="qncheckbox1"></label>
+            </div>
+            <!-- END NOTE ACTION -->
+            <!-- NOTE PREVIEW -->
+            <p class="note-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <!-- END NOTE PREVIEW -->
+         </div>
+         <!-- NOTE DETAILS -->
+         <div class="right pull-right">
+            <!-- NOTE DATE -->
+            <span class="date">12/12/14</span>
+            <a href="#"><i class="fa fa-chevron-right"></i></a>
+            <!-- END NOTE DATE -->
+         </div>
+         <!-- END NOTE DETAILS -->
+      </li>
+      <!-- END NOTE ITEM -->
+   </ul>
+</div>
+<!-- END NOTE LIST -->
+<!-- VIEW NOTE -->
+<div class="view note" id="quick-note">
+   <div>
+      <ul class="toolbar">
+         <li><a href="#" class="close-note-link" data-navigate="view" data-view-port="#note-views" data-view-animation="push"><i class="pg-arrow_left"></i></a>
+         </li>
+         <li><a href="#" class="Bold"><i class="fa fa-bold"></i></a>
+         </li>
+         <li><a href="#" class="Italic"><i class="fa fa-italic"></i></a>
+         </li>
+         <li><a href="#" class=""><i class="fa fa-link"></i></a>
+         </li>
+      </ul>
+      <div class="body">
+         <div>
+            <div class="top">
+               <span>21st april 2014 2:13am</span>
+            </div>
+            <div class="content">
+               <div class="quick-note-editor full-width full-height js-input" contenteditable="true"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END VIEW NOTE -->

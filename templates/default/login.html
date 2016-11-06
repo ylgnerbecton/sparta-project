@@ -1,0 +1,27 @@
+{% extends "default/registration/base_registration.html" %}
+{%load staticfiles%}
+{%block content%}
+  <h2>Login</h2>
+  <p>Não lembra a senha? <a href="/reset/password_reset">Clique aqui.</a></p>
+  <p>{{ context.error}}</p>
+  <form id="form-register" class="p-t-15" method="POST" role="form">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group form-group-default">
+          <label>Email</label>
+          <input type="text" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}" placeholder="" class="form-control" required>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group form-group-default">
+          <label>Senha</label>
+          <input type="password" id="{{ form.email.id_for_label }}" name="{{ form.password.html_name }}" placeholder="" class="form-control" required>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-default btn-cons m-r-0 m-t-10 pull-right" type="submit">Entrar</button>
+  </form>
+{%endblock%}

@@ -1,0 +1,139 @@
+{% extends "default/panel/layout.html" %} 
+{% load staticfiles %}
+
+{% block content %}
+<div class="content full-height">
+ <div class="container-fluid full-height no-padding">
+  <div class="row full-height no-margin">
+   
+   <!-- USER DATA -->
+   <div class="col-md-3 no-padding b-r b-grey sm-b-b full-height">
+    <div class="bg-white full-height">
+      <br/>
+      <h3 class="profile-username text-center">
+        {% if request.user.foto %}
+        <img src="{{MEDIA_URL}}{{request.user.foto}}" alt="" data-src="{{MEDIA_URL}}{{request.user.foto}}" data-src-retina="{{MEDIA_URL}}{{request.user.foto}}" width="32" height="32">
+        {% else %}
+        <img class="img-responsive img-circle" src="{% static 'img/default/avatar.jpg' %}"  style="margin-left:auto;margin-right: auto;" alt="User Image">
+        {% endif %}
+      </h3>
+      <p class="text-muted text-center">{{request.user.id_tipo_usuario.descricao}}</p>
+      {% if request.user.data_nascimento %}
+      <ul class="list-group list-group-unbordered">
+        <li class="list-group-item">
+          <b>Nascido em </b> <p class="pull-right">{{request.user.data_nascimento}}</p>
+        </li>
+      </ul>
+      {% endif %}
+      <a href="" class="btn btn-primary btn-block"><b>Modificar Senha</b></a>
+    </div>
+  </div>
+  <!-- END USER DATA -->
+
+  <!-- CONTAINER FORM -->
+  <div class="col-md-7 no-padding full-height">
+    <div class="bg-white full-height">
+
+     <!-- FORM -->
+     <form class="p-t-15" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.errors}}
+      <div class="panel">
+        <ul role="tablist" class="nav nav-tabs nav-tabs-simple">
+         <li class="active"><a role="tab" data-toggle="tab" href="#basic">Dados Básicos</a>
+         </li>
+         <li class=""><a role="tab" data-toggle="tab" href="#documents">Documentos</a>
+         </li>
+         <li class=""><a role="tab" data-toggle="tab" href="#address">Endereço</a>
+         </li>
+       </ul>
+       <div class="tab-content">
+
+         <div id="basic" class="tab-pane active">
+          <div class="row">
+            
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.nomecompleto.label_tag}}</label>
+                {{form.nomecompleto}}
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.id_genero.label_tag}}</label>
+                {{form.id_genero}}
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.data_nascimento.label_tag}}</label>
+                {{form.data_nascimento}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="documents" class="tab-pane">
+          <div class="row">
+            RG, CPF, ORGAO EMISSOR E FOTO
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.rg.label_tag}}</label>
+                {{form.rg}}
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.cpf.label_tag}}</label>
+                {{form.cpf}}
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.orgaoemissor.label_tag}}</label>
+                {{form.orgaoemissor}}
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.foto.label_tag}}</label>
+                {{form.foto}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div id="address" class="tab-pane">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div class="form-group form-group-default">
+                <label>{{form.id_endereco.label_tag}}</label>
+                {{form.id_endereco}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <input class="btn btn-primary btn-cons m-t-10" type="submit" value="Cadastrar" />
+  </form>
+  <!-- END FORM -->
+
+</div>
+</div>
+<!-- END CONTAINER FORM -->
+
+</div>
+</div>
+</div>
+{% endblock %}
+
