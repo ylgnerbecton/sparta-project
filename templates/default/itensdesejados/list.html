@@ -31,14 +31,10 @@
  <table class="table table-hover table-condensed table-responsive" id="tableWithSearch">
   <thead>
     <tr>
-     <th style="width:17%">Nome Divida</th>
-     <th style="width:17%">Dt. Início</th>
-     <th style="width:17%">Dt. Atual</th>
-     <th style="width:17%">Dt. Fim</th>
-     <th style="width:17%">Parcelas</th>
-     <th style="width:17%">Vl. Percela</th>
-     <th style="width:17%">Vl. Divída</th>
-     <th style="width:17%">Vl. Pago</th>
+     <th style="width:17%">Nome</th>
+     <th style="width:17%">Dt. Prevista</th>
+     <th style="width:17%">Link</th>
+     <th style="width:17%">Valor</th>
      <th style="width:15%">Opções</th>
    </tr>
  </thead>
@@ -53,6 +49,9 @@
   </td>
   <td class="v-align-middle">
     <p>{{itensdesejados.link}}</p>
+  </td>
+  <td class="v-align-middle">
+    <p>{{itensdesejados.valor}}</p>
   </td>
   <td class="v-align-middle">
     <a href="/sparta/itensdesejados/detail/{{itensdesejados.id_itensdesejados}}">

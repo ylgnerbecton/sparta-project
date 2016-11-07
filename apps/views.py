@@ -588,6 +588,7 @@ class ItensDesejadosRegister(JSONResponseMixin,View):
             
             data_prevista = request.POST['data_prevista']
             nome = request.POST['nome']
+            valor = request.POST['valor']
             imagem_produto = request.POST['imagem_produto']
             link = request.POST['link']
 
@@ -602,6 +603,9 @@ class ItensDesejadosRegister(JSONResponseMixin,View):
             if not imagem_produto:
                 context['error_msg'] = 'Por favor, preencha o campo corretamente !'
 
+            if not valor:
+                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
+
             if not link:
                 context['error_msg'] = 'Por favor, preencha o campo corretamente !'
 
@@ -612,6 +616,7 @@ class ItensDesejadosRegister(JSONResponseMixin,View):
                 itensdesejados.data_prevista = data_prevista
                 itensdesejados.imagem_produto = imagem_produto
                 itensdesejados.link = link
+                itensdesejados.valor = valor
                 itensdesejados.save()
 
                 return redirect(reverse_lazy("itensdesejados-list"))
@@ -639,6 +644,7 @@ class ItensDesejadosEdit(JSONResponseMixin,View):
             'data_prevista': itensdesejados.data_prevista,
             'imagem_produto': itensdesejados.imagem_produto,
             'link' : itensdesejados.link, 
+            'valor' : itensdesejados.valor, 
 
            }
         )
@@ -654,6 +660,10 @@ class ItensDesejadosEdit(JSONResponseMixin,View):
             nome = request.POST['nome']
             imagem_produto = request.POST['imagem_produto']
             link = request.POST['link']
+            valor = request.POST['valor']
+
+            if not valor:
+                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
 
             if not nome:
                 context['error_msg'] = 'Por favor, preencha o campo corretamente !'
@@ -676,6 +686,7 @@ class ItensDesejadosEdit(JSONResponseMixin,View):
                 itensdesejados.data_prevista = data_prevista
                 itensdesejados.imagem_produto = imagem_produto
                 itensdesejados.link = link
+                itensdesejados.valor = valor
                 itensdesejados.save()
 
                 return redirect(reverse_lazy("itensdesejados-list"))
