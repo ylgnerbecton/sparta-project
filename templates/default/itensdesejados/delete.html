@@ -25,9 +25,8 @@
       <div class="panel-body">
        <div class="row clearfix">
         <div class="col-sm-6">
-         <form action="" method="post">
-          {% csrf_token %}
-          <p>Tem certeza que deseja deletar um dos Itens Desejados "{{ object }}"?</p>
+         <form action="" method="post">{% csrf_token %}
+          <p>Você tem certeza que deseja deletar "{{ object }}"?</p>
           <input type="submit" value="Confirm" />
         </form>
       </div>

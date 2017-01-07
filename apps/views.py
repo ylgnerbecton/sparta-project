@@ -5,7 +5,7 @@
 ##################################################
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render,redirect, get_object_or_404, render_to_response
-from django.views.generic import RedirectView, View, UpdateView, ListView, DetailView, DeleteView
+from django.views.generic import RedirectView, View, UpdateView, ListView, DetailView, DeleteView, CreateView
 from django.contrib.auth import authenticate, login, logout as django_logout
 from django.http import (HttpResponse, HttpResponseRedirect, HttpResponseForbidden, HttpResponseBadRequest, JsonResponse)
 from django.forms import formset_factory
@@ -60,98 +60,25 @@ class JSONResponseMixin(object):
             DIVIDA METHODS
 ----------------------------------------
 '''
-class DividaRegister(JSONResponseMixin,View):
+class DividaRegister(JSONResponseMixin,CreateView):
+    model = Divida
+    fields = ('__all__')
+    template_name = 'default/divida/register.html'
+    success_url = reverse_lazy("divida-list")
+
     def get(self, request):
         form = DividaForm
         return render(request, 'default/divida/register.html', {'form':form})
 
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = DividaForm(request.POST, request.FILES)
-            
-            nome_divida = request.POST['nome_divida']
-            data_inicio = request.POST['data_inicio']
-            data_atual = request.POST['data_atual']
-            data_fim = request.POST['data_fim']
-            id_parcela = request.POST['id_parcela']
-            valor_parcela = request.POST['valor_parcela']
-            valor_divida = request.POST['valor_divida']
-            valor_pago = request.POST['valor_pago']
 
-            if not nome_divida:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
+class DividaEdit(JSONResponseMixin,UpdateView):
+    model = Divida
+    fields = ('__all__')
+    template_name = 'default/divida/edit.html'
+    success_url = reverse_lazy("divida-list")
 
-            if not data_inicio:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_inicio = datetime.strptime(data_inicio, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not data_atual:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_atual = datetime.strptime(data_atual, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not data_fim:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_fim = datetime.strptime(data_fim, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not id_parcela:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_parcela:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_divida:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_pago:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                divida = Divida()
-                divida.nome_divida = nome_divida
-                divida.data_inicio = data_inicio
-                divida.data_atual = data_atual
-                divida.data_fim = data_fim
-                divida.id_parcela = Parcela.objects.get(pk=id_parcela)
-                divida.valor_parcela = valor_parcela
-                divida.valor_divida = valor_divida
-                divida.valor_pago = valor_pago
-                divida.save()
-
-                return redirect(reverse_lazy("divida-list"))
-
-            else:
-                form = DividaForm(request.POST)
-
-        return render(request, 'default/divida/register.html', {'form': form, 'context':context})
-
-
-class DividaEdit(JSONResponseMixin,View):
     def get(self, request, pk=None):
         divida = Divida.objects.get(pk=pk)
-        id_parcela = Parcela.objects.get(pk=divida.id_parcela.pk)
-        
-        data_inicio = divida.data_inicio
-        data_ini = ""
-        if data_inicio:
-            data_inicio = str(data_inicio).split("-")
-            data_ini = data_inicio[2]+"/"+data_inicio[1]+"/"+data_inicio[0]
-
-        data_atual = divida.data_atual
-        data_atu = ""
-        if data_atual:
-            data_atual = str(data_atual).split("-")
-            data_atu = data_atual[2]+"/"+data_atual[1]+"/"+data_atual[0]
-
-        data_fim = divida.data_fim
-        data_f = ""
-        if data_fim:
-            data_fim = str(data_fim).split("-")
-            data_f = data_fim[2]+"/"+data_fim[1]+"/"+data_fim[0]
 
         form = DividaForm(
             initial={
@@ -169,70 +96,6 @@ class DividaEdit(JSONResponseMixin,View):
         )
         
         return render (request, 'default/divida/edit.html', {'form':form})
-
-    def post(self, request, pk=None, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = DividaForm(request.POST, request.FILES)
-            
-            nome_divida = request.POST['nome_divida']
-            data_inicio = request.POST['data_inicio']
-            data_atual = request.POST['data_atual']
-            data_fim = request.POST['data_fim']
-            id_parcela = request.POST['id_parcela']
-            valor_parcela = request.POST['valor_parcela']
-            valor_divida = request.POST['valor_divida']
-            valor_pago = request.POST['valor_pago']
-
-            if not nome_divida:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not data_inicio:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_inicio = datetime.strptime(data_inicio, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not data_atual:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_atual = datetime.strptime(data_atual, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not data_fim:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_fim = datetime.strptime(data_fim, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not id_parcela:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_parcela:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_divida:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_pago:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                divida = Divida()
-                divida.nome_divida = nome_divida
-                divida.data_inicio = data_inicio
-                divida.data_atual = data_atual
-                divida.data_fim = data_fim
-                divida.id_parcela = Parcela.objects.get(pk=id_parcela)
-                divida.valor_parcela = valor_parcela
-                divida.valor_divida = valor_divida
-                divida.valor_pago = valor_pago
-                divida.save()
-
-                return redirect(reverse_lazy("divida-list"))
-
-            else:
-                form = DividaForm(request.POST)
-
-        return render(request, 'default/divida/edit.html', {'form': form, 'context':context})
 
 
 class DividaList(JSONResponseMixin,ListView):
@@ -263,88 +126,25 @@ class DividaDelete(JSONResponseMixin,DeleteView):
             CONTROLE DE CUSTO METHODS
 ----------------------------------------
 '''
-class ControleCustoRegister(JSONResponseMixin,View):
+class ControleCustoRegister(JSONResponseMixin,CreateView):
+    model = ControleCusto
+    fields = ('__all__')
+    template_name = 'default/controle-custo/register.html'
+    success_url = reverse_lazy("controlecusto-list")
+
     def get(self, request):
         form = ControleCustoForm
         return render(request, 'default/controle-custo/register.html', {'form':form})
 
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = ControleCustoForm(request.POST, request.FILES)
-            
-            nome = request.POST['nome']
-            data = request.POST['data']
-            id_renda = request.POST['id_renda']
-            valor_ganho_renda = request.POST['valor_ganho_renda']
-            id_despesa = request.POST['id_despesa']
-            valor_anterior_despesa = request.POST['valor_anterior_despesa']
-            valor_retirado_despesa = request.POST['valor_retirado_despesa']
-            valor_atual_despesa = request.POST['valor_atual_despesa']
-            comentario = request.POST['comentario']
 
-            if not nome:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
+class ControleCustoEdit(JSONResponseMixin,UpdateView):
+    model = ControleCusto
+    fields = ('__all__')
+    template_name = 'default/controle-custo/edit.html'
+    success_url = reverse_lazy("controlecusto-list")
 
-            if not data:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data = datetime.strptime(data, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not id_renda:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_ganho_renda:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not id_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_anterior_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_retirado_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_atual_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not comentario:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                controlecusto = ControleCusto()
-                controlecusto.nome = nome
-                controlecusto.data = data
-                controlecusto.id_renda = Renda.objects.get(pk=id_renda)
-                controlecusto.valor_ganho_renda = valor_ganho_renda
-                controlecusto.id_despesa = Despesa.objects.get(pk=id_despesa)
-                controlecusto.valor_anterior_despesa = valor_anterior_despesa
-                controlecusto.valor_retirado_despesa = valor_retirado_despesa
-                controlecusto.valor_atual_despesa = valor_atual_despesa
-                controlecusto.comentario = comentario
-                controlecusto.save()
-
-                return redirect(reverse_lazy("controlecusto-list"))
-
-            else:
-                form = ControleCustoForm(request.POST)
-
-        return render(request, 'default/controle-custo/register.html', {'form': form, 'context':context})
-
-
-class ControleCustoEdit(JSONResponseMixin,View):
     def get(self, request, pk=None):
         controlecusto = ControleCusto.objects.get(pk=pk)
-        id_renda = Renda.objects.get(pk=controlecusto.id_renda.pk)
-        id_despesa = Despesa.objects.get(pk=controlecusto.id_despesa.pk)
-
-        data = controlecusto.data
-        dated = ""
-        if data:
-            data = str(data).split("-")
-            dated = data[2]+"/"+data[1]+"/"+data[0]
 
         form = ControleCustoForm(
             initial={
@@ -362,72 +162,7 @@ class ControleCustoEdit(JSONResponseMixin,View):
            }
         )
         
-        return render (request, 'default/controle-custo/edit.html', {'form':form})
-
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = ControleCustoForm(request.POST, request.FILES)
-            
-            nome = request.POST['nome']
-            data = request.POST['data']
-            id_renda = request.POST['id_renda']
-            valor_ganho_renda = request.POST['valor_ganho_renda']
-            id_despesa = request.POST['id_despesa']
-            valor_anterior_despesa = request.POST['valor_anterior_despesa']
-            valor_retirado_despesa = request.POST['valor_retirado_despesa']
-            valor_atual_despesa = request.POST['valor_atual_despesa']
-            comentario = request.POST['comentario']
-
-            if not nome:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not data:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data = datetime.strptime(data, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not id_renda:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_ganho_renda:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not id_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_anterior_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_retirado_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor_atual_despesa:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not comentario:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                controlecusto = ControleCusto()
-                controlecusto.nome = nome
-                controlecusto.data = data
-                controlecusto.id_renda = Renda.objects.get(pk=id_renda)
-                controlecusto.valor_ganho_renda = valor_ganho_renda
-                controlecusto.id_despesa = Despesa.objects.get(pk=id_despesa)
-                controlecusto.valor_anterior_despesa = valor_anterior_despesa
-                controlecusto.valor_retirado_despesa = valor_retirado_despesa
-                controlecusto.valor_atual_despesa = valor_atual_despesa
-                controlecusto.comentario = comentario
-                controlecusto.save()
-
-                return redirect(reverse_lazy("controlecusto-list"))
-
-            else:
-                form = ControleCustoForm(request.POST)
-
-        return render(request, 'default/controle-custo/edit.html', {'form': form, 'context':context})
+        return render(request, 'default/controle-custo/edit.html', {'form':form})
 
 
 class ControleCustoList(JSONResponseMixin,ListView):
@@ -458,49 +193,25 @@ class ControleCustoDelete(JSONResponseMixin,DeleteView):
             DIVIDA METHODS
 ----------------------------------------
 '''
-class SegurancaRegister(JSONResponseMixin,View):
+class SegurancaRegister(JSONResponseMixin,CreateView):
+    model = Seguranca
+    fields = ('__all__')
+    template_name = 'default/seguranca/register.html'
+    success_url = reverse_lazy("seguranca-list")
+
     def get(self, request):
         form = SegurancaForm
         return render(request, 'default/seguranca/register.html', {'form':form})
 
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = SegurancaForm(request.POST, request.FILES)
-            
-            id_tipoconta = request.POST['id_tipoconta']
-            email = request.POST['email']
-            senha = request.POST['senha']
 
-            if not id_tipoconta:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
+class SegurancaEdit(JSONResponseMixin,UpdateView):
+    model = Seguranca
+    fields = ('__all__')
+    template_name = 'default/seguranca/edit.html'
+    success_url = reverse_lazy("seguranca-list")
 
-            if not email:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not senha:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                seguranca = Seguranca()
-                seguranca.email = email
-                seguranca.senha = senha
-                seguranca.id_tipoconta = TipoConta.objects.get(pk=id_tipoconta)
-                seguranca.save()
-
-                return redirect(reverse_lazy("seguranca-list"))
-
-            else:
-                form = SegurancaForm(request.POST)
-
-        return render(request, 'default/seguranca/register.html', {'form': form, 'context':context})
-
-
-class SegurancaEdit(JSONResponseMixin,View):
     def get(self, request, pk=None):
         seguranca = Seguranca.objects.get(pk=pk)
-        id_tipoconta = TipoConta.objects.get(pk=id_tipoconta.pk)
 
         form = DividaForm(
             initial={
@@ -513,39 +224,6 @@ class SegurancaEdit(JSONResponseMixin,View):
         )
         
         return render (request, 'default/seguranca/edit.html', {'form':form})
-
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = SegurancaForm(request.POST, request.FILES)
-            
-            id_tipoconta = request.POST['id_tipoconta']
-            email = request.POST['email']
-            senha = request.POST['senha']
-
-            if not id_tipoconta:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not email:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not senha:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                seguranca = Seguranca()
-                seguranca.email = email
-                seguranca.senha = senha
-                seguranca.id_tipoconta = TipoConta.objects.get(pk=id_tipoconta)
-                seguranca.save()
-
-                return redirect(reverse_lazy("seguranca-list"))
-
-            else:
-                form = SegurancaForm(request.POST)
-
-        return render(request, 'default/seguranca/edit.html', {'form': form, 'context':context})
 
 
 class SegurancaList(JSONResponseMixin,ListView):
@@ -576,66 +254,25 @@ class SegurancaDelete(JSONResponseMixin,DeleteView):
             DIVIDA METHODS
 ----------------------------------------
 '''
-class ItensDesejadosRegister(JSONResponseMixin,View):
+class ItensDesejadosRegister(JSONResponseMixin,CreateView):
+    model = ItensDesejados
+    fields = ('__all__')
+    template_name = 'default/itensdesejados/register.html'
+    success_url = reverse_lazy("itensdesejados-list")
+
     def get(self, request):
         form = ItensDesejadosForm
         return render(request, 'default/itensdesejados/register.html', {'form':form})
 
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = ItensDesejadosForm(request.POST, request.FILES)
-            
-            data_prevista = request.POST['data_prevista']
-            nome = request.POST['nome']
-            valor = request.POST['valor']
-            imagem_produto = request.POST['imagem_produto']
-            link = request.POST['link']
 
-            if not nome:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
+class ItensDesejadosEdit(JSONResponseMixin,UpdateView):
+    model = ItensDesejados
+    fields = ('__all__')
+    template_name = 'default/itensdesejados/edit.html'
+    success_url = reverse_lazy("itensdesejados-list")
 
-            if not data_prevista:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_prevista = datetime.strptime(data_prevista, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not imagem_produto:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not valor:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not link:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                itensdesejados = ItensDesejados()
-                itensdesejados.nome = nome
-                itensdesejados.data_prevista = data_prevista
-                itensdesejados.imagem_produto = imagem_produto
-                itensdesejados.link = link
-                itensdesejados.valor = valor
-                itensdesejados.save()
-
-                return redirect(reverse_lazy("itensdesejados-list"))
-
-            else:
-                form = ItensDesejadosForm(request.POST)
-
-        return render(request, 'default/itensdesejados/register.html', {'form': form, 'context':context})
-
-
-class ItensDesejadosEdit(JSONResponseMixin,View):
     def get(self, request, pk=None):
         itensdesejados = ItensDesejados.objects.get(pk=pk)
-        
-        data_prevista = itensdesejados.data_prevista
-        data_previ = ""
-        if data_prevista:
-            data_prevista = str(data_prevista).split("-")
-            data_previ = data_prevista[2]+"/"+data_prevista[1]+"/"+data_prevista[0]
 
         form = DividaForm(
             initial={
@@ -650,51 +287,6 @@ class ItensDesejadosEdit(JSONResponseMixin,View):
         )
         
         return render (request, 'default/itensdesejados/edit.html', {'form':form})
-
-    def post(self, request, *args, **kwargs):
-        context = {}
-        if request.method == 'POST':            
-            form = ItensDesejadosForm(request.POST, request.FILES)
-            
-            data_prevista = request.POST['data_prevista']
-            nome = request.POST['nome']
-            imagem_produto = request.POST['imagem_produto']
-            link = request.POST['link']
-            valor = request.POST['valor']
-
-            if not valor:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not nome:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not data_prevista:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-            else:
-                data_prevista = datetime.strptime(data_prevista, '%d/%m/%Y').strftime('%Y-%m-%d')
-
-            if not imagem_produto:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not link:
-                context['error_msg'] = 'Por favor, preencha o campo corretamente !'
-
-            if not context:
-
-                itensdesejados = ItensDesejados()
-                itensdesejados.nome = nome
-                itensdesejados.data_prevista = data_prevista
-                itensdesejados.imagem_produto = imagem_produto
-                itensdesejados.link = link
-                itensdesejados.valor = valor
-                itensdesejados.save()
-
-                return redirect(reverse_lazy("itensdesejados-list"))
-
-            else:
-                form = ItensDesejadosForm(request.POST)
-
-        return render(request, 'default/itensdesejados/edit.html', {'form': form, 'context':context})
 
 
 class ItensDesejadosList(JSONResponseMixin,ListView):

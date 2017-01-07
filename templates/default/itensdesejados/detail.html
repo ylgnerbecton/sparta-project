@@ -1,9 +1,10 @@
-valor{% extends "default/panel/layout.html" %} 
+{% extends "default/panel/layout.html" %} 
 
 {% block page_info %}
 <li>
-  <b>Itens Desejados</b>
+  <b>Item Desejado</b>
 </li>
+
 <li>
   <a class="active">Detalhes</a>
 </li>
@@ -15,11 +16,12 @@ valor{% extends "default/panel/layout.html" %}
    <div class="panel panel-transparent">
       <div class="panel-heading">
          <div class="panel-title">
-            Itens Desejados
+            Item Desejado
          </div>
+
          <div class="row">
             <!-- BASIC DATA -->
-            <div class="col-lg-8 col-md-8 ">
+            <div class="col-lg-12 col-md-8 ">
                <!-- START PANEL -->
                <div class="panel panel-transparent">
                   <div class="panel-body">
@@ -53,13 +55,12 @@ valor{% extends "default/panel/layout.html" %}
                      </div>
                   </div>
                </div>
+               <!-- END PANEL -->
             </div>
-            <!-- END PANEL -->
+            <!-- END BASIC DATA -->
          </div>
-         <!-- END BASIC DATA -->
       </div>
    </div>
-</div>
-<!-- END PANEL -->
+   <!-- END PANEL -->
 </div>
 {% endblock %}

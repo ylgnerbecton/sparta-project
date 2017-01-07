@@ -33,7 +33,6 @@
     <tr>
      <th style="width:17%">Nome</th>
      <th style="width:17%">Dt. Prevista</th>
-     <th style="width:17%">Link</th>
      <th style="width:17%">Valor</th>
      <th style="width:15%">Opções</th>
    </tr>
@@ -45,23 +44,20 @@
     <p>{{itensdesejados.nome}}</p>
   </td>
   <td class="v-align-middle">
-    <p>{{itensdesejados.data_prevista}}</p>
-  </td>
-  <td class="v-align-middle">
-    <p>{{itensdesejados.link}}</p>
+    <p>{{itensdesejados.data_prevista|date:'d, M, Y'}}</p>
   </td>
   <td class="v-align-middle">
     <p>{{itensdesejados.valor}}</p>
   </td>
   <td class="v-align-middle">
-    <a href="/sparta/itensdesejados/detail/{{itensdesejados.id_itensdesejados}}">
+    <a href="/sparta/itensdesejados/detail/{{itensdesejados.id_itemdesejado}}">
       <i class="pg-search"></i>
     </a>
-    <a href="/sparta/itensdesejados/edit/{{itensdesejados.id_itensdesejados}}">
+    <a href="/sparta/itensdesejados/edit/{{itensdesejados.id_itemdesejado}}">
       <i class="pg-settings"></i>
     </a>
-    {% if request.itensdesejados.id_itensdesejados != itensdesejados.id_itensdesejados %}
-    <a href="/sparta/itensdesejados/delete/{{itensdesejados.id_itensdesejados}}">
+    {% if request.itensdesejados.id_itemdesejado != itensdesejados.id_itemdesejado %}
+    <a href="/sparta/itensdesejados/delete/{{itensdesejados.id_itemdesejado}}">
       <i class="pg-eraser"></i>
     </a>
     {% endif %}
