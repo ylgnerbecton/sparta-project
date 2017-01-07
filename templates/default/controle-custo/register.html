@@ -25,19 +25,17 @@
        Controle de Custo
      </span>
    </a>
- </li>
- {% block subclass_itens %}{% endblock %}     
+ </li>     
 </ul>
 <!-- Tab panes -->
 
-<form autocomplete="off" method="post" enctype="multipart/form-data" role="form" id="form-personal" novalidate="novalidate">
-  {% csrf_token %}
+<form autocomplete="off" method="post" enctype="multipart/form-data" role="form" id="form-personal" novalidate="novalidate">{% csrf_token %}
   <div class="tab-content">
    <div class="tab-pane active slide-left" id="tab1">
      <div class="row row-same-height">
        {{form.errors}}
-       <div class="col-md-8">
-         <div class="padding-10">               
+       <div class="col-md-12">
+         <div class="padding-15">               
            <div class="row">
              <div class="col-sm-4">
                <div class="form-group form-group-default required" maxlength="45">
@@ -52,7 +50,7 @@
                </div>
              </div>
              <div class="col-sm-4">
-               <div class="form-group form-group-default">
+               <div class="form-group form-group-default required">
                  <label>{{form.id_renda.label_tag}}</label>
                  <select class="form-control" id="id_renda" name="id_renda">
                   <option value={{form.id_renda}}</option>
@@ -68,7 +66,7 @@
                </div>
              </div>
              <div class="col-sm-4">
-               <div class="form-group form-group-default">
+               <div class="form-group form-group-default required">
                  <label>{{form.id_despesa.label_tag}}</label>
                  <select class="form-control" id="id_despesa" name="id_despesa">
                   <option value={{form.id_despesa}}</option>
@@ -108,7 +106,7 @@
    </div>
  </div>
  {% block subclass_form %}{% endblock %}             
- <div class="padding-20 bg-white">
+ <div class="padding-15 bg-white">
    <ul class="pager wizard">
      <li class="next finish hidden">
        <button class="btn btn-primary btn-cons btn-animated fa fa-arrow-right from-left pull-right" type="button">

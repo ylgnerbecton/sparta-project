@@ -39,7 +39,6 @@
      <th style="width:17%">Vl. Anterior</th>
      <th style="width:17%">Vl. Retirado</th>
      <th style="width:17%">Vl. Atual</th>
-     <th style="width:17%">Comentário</th>
      <th style="width:15%">Opções</th>
    </tr>
  </thead>
@@ -50,7 +49,7 @@
     <p>{{controlecusto.nome}}</p>
   </td>
   <td class="v-align-middle">
-    <p>{{controlecusto.data}}</p>
+    <p>{{controlecusto.data|date:'d, M, H'}}</p>
   </td>
   <td class="v-align-middle">
     <p>{{controlecusto.id_renda}}</p>
@@ -69,9 +68,6 @@
 </td>
 <td class="v-align-middle">
  <p>{{controlecusto.valor_atual_despesa}}</p>
-</td>
-<td class="v-align-middle">
- <p>{{controlecusto.comentario}}</p>
 </td>
 <td class="v-align-middle">
   <a href="/sparta/controlecusto/detail/{{controlecusto.id_controlecusto}}">

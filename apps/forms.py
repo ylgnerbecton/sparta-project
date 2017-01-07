@@ -48,7 +48,7 @@ class DividaForm(forms.Form):
         
         # Nome Fields widget
         self.fields['nome_divida'].widget.attrs['class'] = 'form-control'
-        self.fields['nome_divida'].widget.attrs['placeholder'] = 'Digite o Nome'
+        self.fields['nome_divida'].widget.attrs['placeholder'] = ''
 
         # Parcela Fields widget
         self.fields['id_parcela'].widget.attrs['class'] = 'form-control'
@@ -56,27 +56,27 @@ class DividaForm(forms.Form):
 
         # Data Início Fields widget
         self.fields['data_atual'].widget.attrs['class'] = 'form-control'
-        self.fields['data_atual'].widget.attrs['placeholder'] = 'Data Atual'
+        self.fields['data_atual'].widget.attrs['placeholder'] = ''
 
         # Data Início Fields widget
         self.fields['data_inicio'].widget.attrs['class'] = 'form-control'
-        self.fields['data_inicio'].widget.attrs['placeholder'] = 'Data Início'
+        self.fields['data_inicio'].widget.attrs['placeholder'] = ''
 
         # Data Admissão Fields widget
         self.fields['data_fim'].widget.attrs['class'] = 'form-control'
-        self.fields['data_fim'].widget.attrs['placeholder'] = 'Data de Fim do Pagamento'
+        self.fields['data_fim'].widget.attrs['placeholder'] = ''
 
         # Valor Parcela Fields widget 
         self.fields['valor_parcela'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_parcela'].widget.attrs['placeholder'] = 'Digite o Valor da Parcela'
+        self.fields['valor_parcela'].widget.attrs['placeholder'] = ''
 
         # Data divida Fields widget
         self.fields['valor_divida'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_divida'].widget.attrs['placeholder'] = 'Digite o Valor da Divida'
+        self.fields['valor_divida'].widget.attrs['placeholder'] = ''
 
         # Valor Pago Fields widget 
         self.fields['valor_pago'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_pago'].widget.attrs['placeholder'] = 'Digite o Valor Pago'
+        self.fields['valor_pago'].widget.attrs['placeholder'] = ''
 
     pass
 
@@ -91,19 +91,19 @@ class ItensDesejadosForm(forms.Form):
         
         # Nome Fields widget
         self.fields['nome'].widget.attrs['class'] = 'form-control'
-        self.fields['nome'].widget.attrs['placeholder'] = 'Digite o Nome do Item'
+        self.fields['nome'].widget.attrs['placeholder'] = ''
 
         # Nome Fields widget
         self.fields['data_prevista'].widget.attrs['class'] = 'form-control'
-        self.fields['data_prevista'].widget.attrs['placeholder'] = 'Digite a Data Prevista de Compra'
+        self.fields['data_prevista'].widget.attrs['placeholder'] = ''
 
         # Valor Fields widget
         self.fields['valor'].widget.attrs['class'] = 'form-control'
-        self.fields['valor'].widget.attrs['placeholder'] = 'Digite o Valor do Item'
+        self.fields['valor'].widget.attrs['placeholder'] = ''
 
         # Link Fields widget
         self.fields['link'].widget.attrs['class'] = 'form-control'
-        self.fields['link'].widget.attrs['placeholder'] = 'Digite o Link'
+        self.fields['link'].widget.attrs['placeholder'] = ''
 
     pass
 
@@ -133,11 +133,11 @@ class SegurancaForm(forms.Form):
 
         # E-mail Fields widget
         self.fields['email'].widget.attrs['class'] = 'form-control'
-        self.fields['email'].widget.attrs['placeholder'] = 'Digite o E-mail'
+        self.fields['email'].widget.attrs['placeholder'] = ''
 
         # Senha Fields widget
         self.fields['senha'].widget.attrs['class'] = 'form-control'
-        self.fields['senha'].widget.attrs['placeholder'] = 'Digite a Senha'
+        self.fields['senha'].widget.attrs['placeholder'] = ''
 
     pass
     
@@ -157,11 +157,11 @@ class ControleCustoForm(forms.Form):
         
         # Nome Fields widget
         self.fields['nome'].widget.attrs['class'] = 'form-control'
-        self.fields['nome'].widget.attrs['placeholder'] = 'Digite o Nome'
+        self.fields['nome'].widget.attrs['placeholder'] = ''
 
         # Data Fields widget
         self.fields['data'].widget.attrs['class'] = 'form-control'
-        self.fields['data'].widget.attrs['placeholder'] = 'Digite a Data'
+        self.fields['data'].widget.attrs['placeholder'] = ''
 
         # Tipo de Renda Fields widget
         self.fields['id_renda'].widget.attrs['class'] = 'form-control'
@@ -169,7 +169,7 @@ class ControleCustoForm(forms.Form):
 
         # Valor Ganho Fields widget
         self.fields['valor_ganho_renda'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_ganho_renda'].widget.attrs['placeholder'] = 'Digite o Valor Ganho'
+        self.fields['valor_ganho_renda'].widget.attrs['placeholder'] = ''
 
         # Despesa Fields widget
         self.fields['id_despesa'].widget.attrs['class'] = 'form-control'
@@ -177,18 +177,18 @@ class ControleCustoForm(forms.Form):
 
         # Valor Anterior Fields widget
         self.fields['valor_anterior_despesa'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_anterior_despesa'].widget.attrs['placeholder'] = 'Digite o Valor Anterior'
+        self.fields['valor_anterior_despesa'].widget.attrs['placeholder'] = ''
 
         # Valor Retirado Fields widget
         self.fields['valor_retirado_despesa'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_retirado_despesa'].widget.attrs['placeholder'] = 'Digite o Valor Retirado'
+        self.fields['valor_retirado_despesa'].widget.attrs['placeholder'] = ''
 
         # Valor Atual Fields widget 
         self.fields['valor_atual_despesa'].widget.attrs['class'] = 'form-control'
-        self.fields['valor_atual_despesa'].widget.attrs['placeholder'] = 'Digite o Valor Atual'
+        self.fields['valor_atual_despesa'].widget.attrs['placeholder'] = ''
 
         # Comentario Fields widget 
         self.fields['comentario'].widget.attrs['class'] = 'form-control'
-        self.fields['comentario'].widget.attrs['placeholder'] = 'Digite um Comentario'
+        self.fields['comentario'].widget.attrs['placeholder'] = ''
 
     pass

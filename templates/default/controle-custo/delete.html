@@ -4,9 +4,11 @@
 <li>
  <b>Controle de Custo</b>
 </li>
+
 <li>
  <a class="active">Deletar</a>
 </li>
+
 {% endblock %}
 
 {% block content %}
@@ -17,6 +19,7 @@
    <div class="panel-title">
     Controle de Custo
   </div>
+
   <div class="row">
     <!-- BASIC DATA -->
     <div class="col-lg-6 col-md-6 ">
@@ -25,16 +28,15 @@
       <div class="panel-body">
        <div class="row clearfix">
         <div class="col-sm-6">
-         <form action="" method="post">
-          {% csrf_token %}
-          <p>Tem certeza que deseja deletar um controle de custo "{{ object }}"?</p>
-          <input type="submit" value="Confirm" />
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- END PANEL -->
+         <form action="" method="post">{% csrf_token %}
+           <p>Você tem certeza que deseja deletar "{{ object }}"?</p>
+           <input type="submit" value="Confirm" />
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- END PANEL -->
 </div>
 <!-- END BASIC DATA -->
 </div>

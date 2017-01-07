@@ -3,7 +3,7 @@
 
 {% block page_info %}
 <li>
-  <b>Itens Desejados</b>
+  <b>Iten Desejado</b>
 </li>
 <li>
   <a class="active">Cadastro</a>
@@ -22,7 +22,7 @@
    <li class="active">
      <a data-toggle="tab" href="#tab1"><i class="fa fa-bars tab-icon"></i>
       <span>
-       Itens Desejados
+       Item Desejado
      </span>
    </a>
  </li>
@@ -36,16 +36,16 @@
    <div class="tab-pane active slide-left" id="tab1">
      <div class="row row-same-height">
        {{form.errors}}
-       <div class="col-md-8">
-         <div class="padding-10">               
+       <div class="col-md-12">
+         <div class="padding-15">               
            <div class="row">
-             <div class="col-sm-4">
+             <div class="col-sm-6">
                <div class="form-group form-group-default required" maxlength="45">
                  <label>{{form.nome.label_tag}}</label>
                  {{form.nome}}
                </div>
              </div>
-             <div class="col-sm-4">
+             <div class="col-sm-6">
                <div class="form-group form-group-default required" maxlength="45">
                  <label>{{form.data_prevista.label_tag}}</label>
                  {{form.data_prevista}}
@@ -53,13 +53,13 @@
              </div>
            </div>
            <div class="row">
-             <div class="col-sm-4">
+             <div class="col-sm-6">
                <div class="form-group form-group-default required" maxlength="45">
                  <label>{{form.link.label_tag}}</label>
                  {{form.link}}
                </div>
              </div>
-             <div class="col-sm-4">
+             <div class="col-sm-6">
                <div class="form-group form-group-default required"  maxlength="45">
                  <label>{{form.valor.label_tag}}</label>
                  {{form.valor}}
@@ -72,7 +72,7 @@
    </div>
  </div>
  {% block subclass_form %}{% endblock %}             
- <div class="padding-20 bg-white">
+ <div class="padding-15 bg-white">
    <ul class="pager wizard">
      <li class="next finish hidden">
        <button class="btn btn-primary btn-cons btn-animated fa fa-arrow-right from-left pull-right" type="button">

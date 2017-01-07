@@ -76,6 +76,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 WSGI_APPLICATION = 'sparta_project.wsgi.application'
 ADMIN_SITE_HEADER = "CONTROLE FINANCEIRO - Administração"
 
@@ -117,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
+LOGIN_REDIRECT_URL = '/controlecusto/list/'
 '''
     INTERNACIONALIZATION
 '''

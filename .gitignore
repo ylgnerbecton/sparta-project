@@ -1,6 +1,6 @@
 *.pyc
-sparta_project/setting.py
-__pycache__
-env
-apps/migrations/
-default/migrations/
+*sparta_project/setting.py
+*__pycache__
+*env
+*apps/migrations/
+*default/migrations/

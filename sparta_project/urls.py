@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
 admin.site.site_header = settings.ADMIN_SITE_HEADER
-
+admin.autodiscover()
 '''
     DJANGO URLS
 '''

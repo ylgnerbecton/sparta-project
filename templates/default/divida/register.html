@@ -36,8 +36,8 @@
    <div class="tab-pane active slide-left" id="tab1">
      <div class="row row-same-height">
        {{form.errors}}
-       <div class="col-md-8">
-         <div class="padding-10">               
+       <div class="col-md-12">
+         <div class="padding-15">               
            <div class="row clearfix p-t-10">
              <div class="col-sm-4">
                <div class="form-group form-group-default required" maxlength="45">
@@ -66,7 +66,7 @@
                </div>
              </div>
              <div class="col-sm-4">
-               <div class="form-group form-group-default">
+               <div class="form-group form-group-default required">
                  <label>{{form.id_parcela.label_tag}}</label>
                  <select class="form-control" id="id_parcela" name="id_parcela">
                   <option value={{form.id_parcela}}</option>
@@ -81,13 +81,13 @@
              </div>
            </div>
            <div class="row">
-             <div class="col-sm-4">
+             <div class="col-sm-6">
                <div class="form-group form-group-default required"  maxlength="45">
                  <label>{{form.valor_divida.label_tag}}</label>
                  {{form.valor_divida}}
                </div>
              </div>
-             <div class="col-sm-4">               
+             <div class="col-sm-6">               
                <div class="form-group form-group-default required"  maxlength="45">
                  <label>{{form.valor_pago.label_tag}}</label>
                  {{form.valor_pago}}
@@ -100,7 +100,7 @@
    </div>
  </div>
  {% block subclass_form %}{% endblock %}             
- <div class="padding-20 bg-white">
+ <div class="padding-15 bg-white">
    <ul class="pager wizard">
      <li class="next finish hidden">
        <button class="btn btn-primary btn-cons btn-animated fa fa-arrow-right from-left pull-right" type="button">
