@@ -10,15 +10,10 @@ admin.autodiscover()
 '''
     DJANGO URLS
 '''
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-]
-
-'''
-    CUSTOM URLS
-'''
-urlpatterns += (
+urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^sparta/', include('apps.urls')),
+    url(r'^', include('apps.urls')),
 )
 
 '''
