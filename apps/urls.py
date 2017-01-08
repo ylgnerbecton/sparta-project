@@ -21,6 +21,7 @@ from .views import SegurancaRegister, SegurancaList, SegurancaEdit, SegurancaDet
 ##################################################
 
 urlpatterns = [
+	url(r'^/$', ControleCustoList.as_view(), name="home"),
     url(r'^divida/register/$', DividaRegister.as_view(), name="divida-register"),
 	url(r'^divida/list/$', DividaList.as_view(), name="divida-list"),
 	url(r'^divida/detail/(?P<pk>\d+)/$', DividaDetail.as_view(), name="divida-detail"),
@@ -44,5 +45,4 @@ urlpatterns = [
 	url(r'^controlecusto/detail/(?P<pk>\d+)/$', ControleCustoDetail.as_view(), name="controlecusto-detail"),
 	url(r'^controlecusto/edit/(?P<pk>\d+)/$', ControleCustoEdit.as_view(), name="controlecusto-edit"),
 	url(r'^controlecusto/delete/(?P<pk>\d+)/$', ControleCustoDelete.as_view(), name="controlecusto-delete"),
-
 ]

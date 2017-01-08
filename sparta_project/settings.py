@@ -119,7 +119,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGIN_REDIRECT_URL = '/controlecusto/list/'
 '''
     INTERNACIONALIZATION
 '''
@@ -146,3 +145,9 @@ STATICFILES_DIRS = (
 '''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+'''
+    url to redirect after successfull login
+'''
+LOGIN_REDIRECT_URL = '/sparta/controlecusto/list'
+LOGIN_URL='/sparta/controlecusto/list/'

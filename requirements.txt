@@ -1,4 +1,12 @@
-django==1.9
-django-cors-headers
+django
 Pillow
 mysqlclient
+requests
+gunicorn
+gevent
+django-simple-history
+django-extensions
+django-allauth
+django-smuggler
+django-debug-toolbar
+django-cors-headers
