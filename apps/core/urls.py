@@ -3,21 +3,13 @@
 ##################################################
 #               DJANGO IMPORTS                   #
 ##################################################
-from django.conf.urls import include, url, patterns
-from django.contrib.auth.views import login, logout
-from django.conf.urls.static import static
-from django.conf import settings
-from django.contrib.auth.decorators import login_required
-from . import views
-##################################################
+from django.conf.urls import url
 
-##################################################
-#               CUSTOM IMPORTS                   #
-##################################################
-from .views import DividaRegister, DividaList, DividaDetail, DividaEdit, DividaDelete
 from .views import ControleCustoRegister, ControleCustoList, ControleCustoDetail, ControleCustoEdit, ControleCustoDelete
+from .views import DividaRegister, DividaList, DividaDetail, DividaEdit, DividaDelete
 from .views import ItensDesejadosRegister, ItensDesejadosList, ItensDesejadosDetail, ItensDesejadosEdit, ItensDesejadosDelete
 from .views import SegurancaRegister, SegurancaList, SegurancaEdit, SegurancaDetail, SegurancaDelete
+
 ##################################################
 
 urlpatterns = [

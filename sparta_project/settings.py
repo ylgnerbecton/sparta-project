@@ -36,8 +36,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps',
+    'apps.core',
+    'apps.sparta_api',
 ]
+
+INSTALLED_APPS += ('debug_toolbar',)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +60,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+INTERNAL_IPS = ('127.0.0.1')
 
 ROOT_URLCONF = 'sparta_project.urls'
 
@@ -84,7 +97,6 @@ ADMIN_SITE_HEADER = "CONTROLE FINANCEIRO - Administração"
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-
 '''
     DATABASES
 '''
@@ -98,7 +110,27 @@ DATABASES = {
     }
 }
 
-
+'''
+    LOGIN WITH DEBUG
+'''
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 '''
     AUTHENTICATION
@@ -128,17 +160,14 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = False
 
-
-
 '''
     STATIC FILES
 '''
+STATIC_ROOT = '/var/django/www/static'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
-
 
 '''
     UPLOADS MEDIA

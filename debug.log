@@ -1,0 +1,712 @@
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.001) SELECT VERSION(); args=None
+(0.000) SHOW FULL TABLES; args=None
+CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+(0.582) CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); args=None
+(0.109) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=['django_migrations']
+(0.026) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=['django_migrations']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=['django_migrations']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_migrations'; args=['django_migrations']
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+(0.522) CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=['django_content_type']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=['django_content_type']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=['django_content_type']
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'django_content_type'; args=['django_content_type']
+ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_76bd3d3b_uniq` UNIQUE (`app_label`, `model`); (params [])
+(0.365) ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_76bd3d3b_uniq` UNIQUE (`app_label`, `model`); args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.025) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0001_initial', '2017-02-08 09:01:27.199596'); args=['contenttypes', '0001_initial', '2017-02-08 09:01:27.199596']
+CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+(0.585) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); args=None
+(0.052) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=['auth_permission']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=['auth_permission']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=['auth_permission']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_permission'; args=['auth_permission']
+CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+(0.529) CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); args=None
+(0.047) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group'; args=['auth_group']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group'; args=['auth_group']
+CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL); (params None)
+(0.472) CREATE TABLE `auth_group_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL); args=None
+(0.029) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group_permissions'; args=['auth_group_permissions']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group_permissions'; args=['auth_group_permissions']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_group_permissions'; args=['auth_group_permissions']
+CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); (params None)
+(0.457) CREATE TABLE `auth_user` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NOT NULL, `is_superuser` bool NOT NULL, `username` varchar(30) NOT NULL UNIQUE, `first_name` varchar(30) NOT NULL, `last_name` varchar(30) NOT NULL, `email` varchar(75) NOT NULL, `is_staff` bool NOT NULL, `is_active` bool NOT NULL, `date_joined` datetime(6) NOT NULL); args=None
+(0.120) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user'; args=['auth_user']
+CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL); (params None)
+(0.430) CREATE TABLE `auth_user_groups` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `group_id` integer NOT NULL); args=None
+(0.044) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_groups'; args=['auth_user_groups']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_groups'; args=['auth_user_groups']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_groups'; args=['auth_user_groups']
+CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL); (params None)
+(0.530) CREATE TABLE `auth_user_user_permissions` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL, `permission_id` integer NOT NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_user_permissions'; args=['auth_user_user_permissions']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_user_permissions'; args=['auth_user_user_permissions']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'auth_user_user_permissions'; args=['auth_user_user_permissions']
+ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+(1.490) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_01ab375a_uniq` UNIQUE (`content_type_id`, `codename`); (params [])
+(0.691) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_01ab375a_uniq` UNIQUE (`content_type_id`, `codename`); args=[]
+ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+(1.104) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissi_permission_id_84c5c92e_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+(1.406) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissi_permission_id_84c5c92e_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_0cd325b0_uniq` UNIQUE (`group_id`, `permission_id`); (params [])
+(0.858) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_0cd325b0_uniq` UNIQUE (`group_id`, `permission_id`); args=[]
+ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+(1.892) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params [])
+(1.239) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=[]
+ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_94350c0c_uniq` UNIQUE (`user_id`, `group_id`); (params [])
+(0.624) ALTER TABLE `auth_user_groups` ADD CONSTRAINT `auth_user_groups_user_id_94350c0c_uniq` UNIQUE (`user_id`, `group_id`); args=[]
+ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+(1.036) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params [])
+(1.496) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=[]
+ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissions_user_id_14a6b632_uniq` UNIQUE (`user_id`, `permission_id`); (params [])
+(0.652) ALTER TABLE `auth_user_user_permissions` ADD CONSTRAINT `auth_user_user_permissions_user_id_14a6b632_uniq` UNIQUE (`user_id`, `permission_id`); args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0001_initial', '2017-02-08 09:01:43.205975'); args=['auth', '0001_initial', '2017-02-08 09:01:43.205975']
+CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); (params None)
+(0.359) CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL, `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` integer NOT NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_admin_log'; args=['django_admin_log']
+ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params [])
+(0.993) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=[]
+ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); (params [])
+(1.037) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`); args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0001_initial', '2017-02-08 09:01:45.737379'); args=['admin', '0001_initial', '2017-02-08 09:01:45.737379']
+ALTER TABLE `django_admin_log` ALTER COLUMN `action_time` SET DEFAULT %s; (params ['2017-02-08 09:01:45.837837'])
+(0.075) ALTER TABLE `django_admin_log` ALTER COLUMN `action_time` SET DEFAULT '2017-02-08 09:01:45.837837'; args=['2017-02-08 09:01:45.837837']
+ALTER TABLE `django_admin_log` ALTER COLUMN `action_time` DROP DEFAULT; (params [])
+(0.033) ALTER TABLE `django_admin_log` ALTER COLUMN `action_time` DROP DEFAULT; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0002_logentry_remove_auto_add', '2017-02-08 09:01:45.950450'); args=['admin', '0002_logentry_remove_auto_add', '2017-02-08 09:01:45.950450']
+ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+(0.739) ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; args=[]
+ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; (params [])
+(0.874) ALTER TABLE `django_content_type` DROP COLUMN `name` CASCADE; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0002_remove_content_type_name', '2017-02-08 09:01:47.691580'); args=['contenttypes', '0002_remove_content_type_name', '2017-02-08 09:01:47.691580']
+ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; (params [])
+(0.097) ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.027) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0002_alter_permission_name_max_length', '2017-02-08 09:01:47.869911'); args=['auth', '0002_alter_permission_name_max_length', '2017-02-08 09:01:47.869911']
+ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; (params [])
+(0.085) ALTER TABLE `auth_user` MODIFY `email` varchar(254) NOT NULL; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0003_alter_user_email_max_length', '2017-02-08 09:01:48.061419'); args=['auth', '0003_alter_user_email_max_length', '2017-02-08 09:01:48.061419']
+(0.001) SHOW FULL TABLES; args=None
+(0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0004_alter_user_username_opts', '2017-02-08 09:01:48.151708'); args=['auth', '0004_alter_user_username_opts', '2017-02-08 09:01:48.151708']
+ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; (params [])
+(0.664) ALTER TABLE `auth_user` MODIFY `last_login` datetime(6) NULL; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0005_alter_user_last_login_null', '2017-02-08 09:01:48.889239'); args=['auth', '0005_alter_user_last_login_null', '2017-02-08 09:01:48.889239']
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0006_require_contenttypes_0002', '2017-02-08 09:01:48.966701'); args=['auth', '0006_require_contenttypes_0002', '2017-02-08 09:01:48.966701']
+(0.001) SHOW FULL TABLES; args=None
+(0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0007_alter_validators_add_error_messages', '2017-02-08 09:01:49.049251'); args=['auth', '0007_alter_validators_add_error_messages', '2017-02-08 09:01:49.049251']
+ALTER TABLE `auth_user` MODIFY `username` varchar(150) NOT NULL; (params [])
+(0.465) ALTER TABLE `auth_user` MODIFY `username` varchar(150) NOT NULL; args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0008_alter_user_username_max_length', '2017-02-08 09:01:49.591392'); args=['auth', '0008_alter_user_username_max_length', '2017-02-08 09:01:49.591392']
+CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); (params None)
+(0.418) CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'django_session'; args=['django_session']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_session'; args=['django_session']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'django_session'; args=['django_session']
+CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); (params [])
+(0.462) CREATE INDEX `django_session_de54fa62` ON `django_session` (`expire_date`); args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.001) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('sessions', '0001_initial', '2017-02-08 09:01:50.539326'); args=['sessions', '0001_initial', '2017-02-08 09:01:50.539326']
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'logentry' AND `django_content_type`.`app_label` = 'admin'); args=('logentry', 'admin')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('admin', 'logentry'); args=['admin', 'logentry']
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.001) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add log entry', 1, 'add_logentry'), ('Can change log entry', 1, 'change_logentry'), ('Can delete log entry', 1, 'delete_logentry'); args=('Can add log entry', 1, 'add_logentry', 'Can change log entry', 1, 'change_logentry', 'Can delete log entry', 1, 'delete_logentry')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'permission' AND `django_content_type`.`app_label` = 'auth'); args=('permission', 'auth')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'permission'); args=['auth', 'permission']
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'user' AND `django_content_type`.`app_label` = 'auth'); args=('user', 'auth')
+(0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'user'); args=['auth', 'user']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'group' AND `django_content_type`.`app_label` = 'auth'); args=('group', 'auth')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'group'); args=['auth', 'group']
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.001) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add permission', 2, 'add_permission'), ('Can change permission', 2, 'change_permission'), ('Can delete permission', 2, 'delete_permission'), ('Can add user', 3, 'add_user'), ('Can change user', 3, 'change_user'), ('Can delete user', 3, 'delete_user'), ('Can add group', 4, 'add_group'), ('Can change group', 4, 'change_group'), ('Can delete group', 4, 'delete_group'); args=('Can add permission', 2, 'add_permission', 'Can change permission', 2, 'change_permission', 'Can delete permission', 2, 'delete_permission', 'Can add user', 3, 'add_user', 'Can change user', 3, 'change_user', 'Can delete user', 3, 'delete_user', 'Can add group', 4, 'add_group', 'Can change group', 4, 'change_group', 'Can delete group', 4, 'delete_group')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'contenttype' AND `django_content_type`.`app_label` = 'contenttypes'); args=('contenttype', 'contenttypes')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('contenttypes', 'contenttype'); args=['contenttypes', 'contenttype']
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.001) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add content type', 5, 'add_contenttype'), ('Can change content type', 5, 'change_contenttype'), ('Can delete content type', 5, 'delete_contenttype'); args=('Can add content type', 5, 'add_contenttype', 'Can change content type', 5, 'change_contenttype', 'Can delete content type', 5, 'delete_contenttype')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`model` = 'session' AND `django_content_type`.`app_label` = 'sessions'); args=('session', 'sessions')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('sessions', 'session'); args=['sessions', 'session']
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.001) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add session', 6, 'add_session'), ('Can change session', 6, 'change_session'), ('Can delete session', 6, 'delete_session'); args=('Can add session', 6, 'add_session', 'Can change session', 6, 'change_session', 'Can delete session', 6, 'delete_session')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT @@sql_mode; args=None
+(0.000) SELECT VERSION(); args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SHOW FULL TABLES; args=None
+(0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+CREATE TABLE `core_controlecusto` (`id_controlecusto` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `nome` varchar(45) NOT NULL, `data` datetime(6) NULL, `valor_ganho_renda` integer NULL, `valor_anterior_despesa` integer NULL, `valor_retirado_despesa` integer NULL, `valor_atual_despesa` integer NULL, `comentario` longtext NULL); (params None)
+(0.637) CREATE TABLE `core_controlecusto` (`id_controlecusto` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `nome` varchar(45) NOT NULL, `data` datetime(6) NULL, `valor_ganho_renda` integer NULL, `valor_anterior_despesa` integer NULL, `valor_retirado_despesa` integer NULL, `valor_atual_despesa` integer NULL, `comentario` longtext NULL); args=None
+(0.135) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+CREATE TABLE `core_despesa` (`id_despesa` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tipodespesa` varchar(45) NULL); (params None)
+(0.561) CREATE TABLE `core_despesa` (`id_despesa` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tipodespesa` varchar(45) NULL); args=None
+(0.026) SELECT engine FROM information_schema.tables WHERE table_name = 'core_despesa'; args=['core_despesa']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_despesa'; args=['core_despesa']
+CREATE TABLE `core_divida` (`id_divida` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `nome_divida` varchar(45) NOT NULL, `data_inicio` date NULL, `data_atual` date NULL, `data_fim` date NULL, `valor_parcela` integer NULL, `valor_divida` integer NULL, `valor_pago` integer NULL); (params None)
+(0.512) CREATE TABLE `core_divida` (`id_divida` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `nome_divida` varchar(45) NOT NULL, `data_inicio` date NULL, `data_atual` date NULL, `data_fim` date NULL, `valor_parcela` integer NULL, `valor_divida` integer NULL, `valor_pago` integer NULL); args=None
+(0.019) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+CREATE TABLE `core_itensdesejados` (`id_itemdesejado` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `data_prevista` date NULL, `nome` varchar(45) NOT NULL, `imagem_produto` varchar(100) NULL, `valor` integer NULL, `link` varchar(200) NULL); (params None)
+(0.417) CREATE TABLE `core_itensdesejados` (`id_itemdesejado` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `data_prevista` date NULL, `nome` varchar(45) NOT NULL, `imagem_produto` varchar(100) NULL, `valor` integer NULL, `link` varchar(200) NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_itensdesejados'; args=['core_itensdesejados']
+CREATE TABLE `core_parcela` (`id_parcela` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `parcela` varchar(45) NULL); (params None)
+(0.396) CREATE TABLE `core_parcela` (`id_parcela` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `parcela` varchar(45) NULL); args=None
+(0.043) SELECT engine FROM information_schema.tables WHERE table_name = 'core_parcela'; args=['core_parcela']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_parcela'; args=['core_parcela']
+CREATE TABLE `core_renda` (`id_renda` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tiporenda` varchar(45) NOT NULL); (params None)
+(0.351) CREATE TABLE `core_renda` (`id_renda` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tiporenda` varchar(45) NOT NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'core_renda'; args=['core_renda']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_renda'; args=['core_renda']
+CREATE TABLE `core_seguranca` (`id_seguranca` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `email` varchar(45) NOT NULL, `senha` varchar(45) NULL); (params None)
+(0.325) CREATE TABLE `core_seguranca` (`id_seguranca` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `email` varchar(45) NOT NULL, `senha` varchar(45) NULL); args=None
+(0.019) SELECT engine FROM information_schema.tables WHERE table_name = 'core_seguranca'; args=['core_seguranca']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_seguranca'; args=['core_seguranca']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_seguranca'; args=['core_seguranca']
+CREATE TABLE `core_tipoconta` (`id_tipoconta` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tipoconta` varchar(45) NULL); (params None)
+(0.540) CREATE TABLE `core_tipoconta` (`id_tipoconta` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `tipoconta` varchar(45) NULL); args=None
+(0.002) SELECT engine FROM information_schema.tables WHERE table_name = 'core_tipoconta'; args=['core_tipoconta']
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_tipoconta'; args=['core_tipoconta']
+ALTER TABLE `core_seguranca` ADD COLUMN `id_tipoconta_id` integer NULL; (params [])
+(0.744) ALTER TABLE `core_seguranca` ADD COLUMN `id_tipoconta_id` integer NULL; args=[]
+ALTER TABLE `core_seguranca` ALTER COLUMN `id_tipoconta_id` DROP DEFAULT; (params [])
+(0.045) ALTER TABLE `core_seguranca` ALTER COLUMN `id_tipoconta_id` DROP DEFAULT; args=[]
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_seguranca'; args=['core_seguranca']
+ALTER TABLE `core_divida` ADD COLUMN `id_parcela_id` integer NULL; (params [])
+(0.785) ALTER TABLE `core_divida` ADD COLUMN `id_parcela_id` integer NULL; args=[]
+ALTER TABLE `core_divida` ALTER COLUMN `id_parcela_id` DROP DEFAULT; (params [])
+(0.225) ALTER TABLE `core_divida` ALTER COLUMN `id_parcela_id` DROP DEFAULT; args=[]
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_divida'; args=['core_divida']
+ALTER TABLE `core_controlecusto` ADD COLUMN `id_despesa_id` integer NULL; (params [])
+(0.630) ALTER TABLE `core_controlecusto` ADD COLUMN `id_despesa_id` integer NULL; args=[]
+ALTER TABLE `core_controlecusto` ALTER COLUMN `id_despesa_id` DROP DEFAULT; (params [])
+(0.045) ALTER TABLE `core_controlecusto` ALTER COLUMN `id_despesa_id` DROP DEFAULT; args=[]
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+ALTER TABLE `core_controlecusto` ADD COLUMN `id_renda_id` integer NULL; (params [])
+(0.946) ALTER TABLE `core_controlecusto` ADD COLUMN `id_renda_id` integer NULL; args=[]
+ALTER TABLE `core_controlecusto` ALTER COLUMN `id_renda_id` DROP DEFAULT; (params [])
+(0.034) ALTER TABLE `core_controlecusto` ALTER COLUMN `id_renda_id` DROP DEFAULT; args=[]
+(0.001) SELECT engine FROM information_schema.tables WHERE table_name = 'core_controlecusto'; args=['core_controlecusto']
+ALTER TABLE `core_seguranca` ADD CONSTRAINT `core_seg_id_tipoconta_id_cefd5552_fk_core_tipoconta_id_tipoconta` FOREIGN KEY (`id_tipoconta_id`) REFERENCES `core_tipoconta` (`id_tipoconta`); (params [])
+(1.004) ALTER TABLE `core_seguranca` ADD CONSTRAINT `core_seg_id_tipoconta_id_cefd5552_fk_core_tipoconta_id_tipoconta` FOREIGN KEY (`id_tipoconta_id`) REFERENCES `core_tipoconta` (`id_tipoconta`); args=[]
+ALTER TABLE `core_divida` ADD CONSTRAINT `core_divida_id_parcela_id_db5a1058_fk_core_parcela_id_parcela` FOREIGN KEY (`id_parcela_id`) REFERENCES `core_parcela` (`id_parcela`); (params [])
+(1.327) ALTER TABLE `core_divida` ADD CONSTRAINT `core_divida_id_parcela_id_db5a1058_fk_core_parcela_id_parcela` FOREIGN KEY (`id_parcela_id`) REFERENCES `core_parcela` (`id_parcela`); args=[]
+ALTER TABLE `core_controlecusto` ADD CONSTRAINT `core_controlec_id_despesa_id_85c5e123_fk_core_despesa_id_despesa` FOREIGN KEY (`id_despesa_id`) REFERENCES `core_despesa` (`id_despesa`); (params [])
+(1.387) ALTER TABLE `core_controlecusto` ADD CONSTRAINT `core_controlec_id_despesa_id_85c5e123_fk_core_despesa_id_despesa` FOREIGN KEY (`id_despesa_id`) REFERENCES `core_despesa` (`id_despesa`); args=[]
+ALTER TABLE `core_controlecusto` ADD CONSTRAINT `core_controlecusto_id_renda_id_d80decd6_fk_core_renda_id_renda` FOREIGN KEY (`id_renda_id`) REFERENCES `core_renda` (`id_renda`); (params [])
+(1.204) ALTER TABLE `core_controlecusto` ADD CONSTRAINT `core_controlecusto_id_renda_id_d80decd6_fk_core_renda_id_renda` FOREIGN KEY (`id_renda_id`) REFERENCES `core_renda` (`id_renda`); args=[]
+(0.001) SHOW FULL TABLES; args=None
+(0.000) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('core', '0001_initial', '2017-02-08 09:02:14.463475'); args=['core', '0001_initial', '2017-02-08 09:02:14.463475']
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'admin' AND `django_content_type`.`model` = 'logentry'); args=('admin', 'logentry')
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'user'); args=('auth', 'user')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'permission'); args=('auth', 'permission')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'group'); args=('auth', 'group')
+(0.002) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'contenttypes' AND `django_content_type`.`model` = 'contenttype'); args=('contenttypes', 'contenttype')
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'sessions' AND `django_content_type`.`model` = 'session'); args=('sessions', 'session')
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'itensdesejados'); args=('core', 'itensdesejados')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'itensdesejados'); args=('core', 'itensdesejados')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'itensdesejados'); args=['core', 'itensdesejados']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'tipoconta'); args=('core', 'tipoconta')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'tipoconta'); args=('core', 'tipoconta')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'tipoconta'); args=['core', 'tipoconta']
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'seguranca'); args=('core', 'seguranca')
+(0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'seguranca'); args=('core', 'seguranca')
+(0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'seguranca'); args=['core', 'seguranca']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'divida'); args=('core', 'divida')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'divida'); args=('core', 'divida')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'divida'); args=['core', 'divida']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'parcela'); args=('core', 'parcela')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'parcela'); args=('core', 'parcela')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'parcela'); args=['core', 'parcela']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'renda'); args=('core', 'renda')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'renda'); args=('core', 'renda')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'renda'); args=['core', 'renda']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'controlecusto'); args=('core', 'controlecusto')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'controlecusto'); args=('core', 'controlecusto')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'controlecusto'); args=['core', 'controlecusto']
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'despesa'); args=('core', 'despesa')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'core' AND `django_content_type`.`model` = 'despesa'); args=('core', 'despesa')
+(0.001) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('core', 'despesa'); args=['core', 'despesa']
+(0.001) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (7, 8, 9, 10, 11, 12, 13, 14) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7, 8, 9, 10, 11, 12, 13, 14)
+(0.100) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add itens desejados', 7, 'add_itensdesejados'), ('Can change itens desejados', 7, 'change_itensdesejados'), ('Can delete itens desejados', 7, 'delete_itensdesejados'), ('Can add tipo conta', 8, 'add_tipoconta'), ('Can change tipo conta', 8, 'change_tipoconta'), ('Can delete tipo conta', 8, 'delete_tipoconta'), ('Can add seguranca', 9, 'add_seguranca'), ('Can change seguranca', 9, 'change_seguranca'), ('Can delete seguranca', 9, 'delete_seguranca'), ('Can add divida', 10, 'add_divida'), ('Can change divida', 10, 'change_divida'), ('Can delete divida', 10, 'delete_divida'), ('Can add parcela', 11, 'add_parcela'), ('Can change parcela', 11, 'change_parcela'), ('Can delete parcela', 11, 'delete_parcela'), ('Can add renda', 12, 'add_renda'), ('Can change renda', 12, 'change_renda'), ('Can delete renda', 12, 'delete_renda'), ('Can add controle custo', 13, 'add_controlecusto'), ('Can change controle custo', 13, 'change_controlecusto'), ('Can delete controle custo', 13, 'delete_controlecusto'), ('Can add despesa', 14, 'add_despesa'), ('Can change despesa', 14, 'change_despesa'), ('Can delete despesa', 14, 'delete_despesa'); args=('Can add itens desejados', 7, 'add_itensdesejados', 'Can change itens desejados', 7, 'change_itensdesejados', 'Can delete itens desejados', 7, 'delete_itensdesejados', 'Can add tipo conta', 8, 'add_tipoconta', 'Can change tipo conta', 8, 'change_tipoconta', 'Can delete tipo conta', 8, 'delete_tipoconta', 'Can add seguranca', 9, 'add_seguranca', 'Can change seguranca', 9, 'change_seguranca', 'Can delete seguranca', 9, 'delete_seguranca', 'Can add divida', 10, 'add_divida', 'Can change divida', 10, 'change_divida', 'Can delete divida', 10, 'delete_divida', 'Can add parcela', 11, 'add_parcela', 'Can change parcela', 11, 'change_parcela', 'Can delete parcela', 11, 'delete_parcela', 'Can add renda', 12, 'add_renda', 'Can change renda', 12, 'change_renda', 'Can delete renda', 12, 'delete_renda', 'Can add controle custo', 13, 'add_controlecusto', 'Can change controle custo', 13, 'change_controlecusto', 'Can delete controle custo', 13, 'delete_controlecusto', 'Can add despesa', 14, 'add_despesa', 'Can change despesa', 14, 'change_despesa', 'Can delete despesa', 14, 'delete_despesa')
+(0.001) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'core'; args=('core',)
+(0.027) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.001) SHOW FULL TABLES; args=None
+(0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.001) SELECT VERSION(); args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:01', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 202, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+_mysql_exceptions.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/admin/sites.py", line 229, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/admin/sites.py", line 200, in inner
+    if not self.has_permission(request):
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/admin/sites.py", line 174, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 234, in inner
+    self._setup()
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/functional.py", line 380, in _setup
+    self._wrapped = self._setupfunc()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/auth/middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/auth/__init__.py", line 180, in get_user
+    user_id = _get_user_session_key(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 207, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/db.py", line 35, in load
+    expire_date__gt=timezone.now()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 379, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 238, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/panels/sql/tracking.py", line 159, in execute
+    return self._record(self.cursor.execute, sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/panels/sql/tracking.py", line 101, in _record
+    return method(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:01', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` LIMIT 21; args=()
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:01', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:01', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:01', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 202, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+_mysql_exceptions.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 131, in get_response
+    response = middleware_method(request, response)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/middleware.py", line 129, in process_response
+    panel.generate_stats(request, response)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/panels/request.py", line 55, in generate_stats
+    for k in sorted(request.session.keys(), key=force_text)]
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 128, in keys
+    return self._session.keys()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 207, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/db.py", line 35, in load
+    expire_date__gt=timezone.now()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 379, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 238, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` LIMIT 21; args=()
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:03', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:04', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+"GET /admin/ HTTP/1.1" 500 201191
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^sparta/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern home ^/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-register ^divida/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-list ^divida/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-detail ^divida/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-edit ^divida/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-delete ^divida/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-register ^seguranca/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-list ^seguranca/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-detail ^seguranca/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-edit ^seguranca/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-delete ^seguranca/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-register ^itensdesejados/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-list ^itensdesejados/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-detail ^itensdesejados/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-edit ^itensdesejados/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-delete ^itensdesejados/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-register ^controlecusto/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-list ^controlecusto/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-detail ^controlecusto/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-edit ^controlecusto/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-delete ^controlecusto/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'debug_toolbar.toolbar' from '/usr/local/lib/python3.5/dist-packages/debug_toolbar/toolbar.py'> (djdt:djdt) ^__debug__/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^sparta/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern home ^/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-register ^divida/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-list ^divida/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-detail ^divida/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-edit ^divida/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-delete ^divida/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-register ^seguranca/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-list ^seguranca/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-detail ^seguranca/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-edit ^seguranca/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-delete ^seguranca/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-register ^itensdesejados/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-list ^itensdesejados/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-detail ^itensdesejados/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-edit ^itensdesejados/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-delete ^itensdesejados/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-register ^controlecusto/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-list ^controlecusto/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-detail ^controlecusto/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-edit ^controlecusto/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-delete ^controlecusto/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'debug_toolbar.toolbar' from '/usr/local/lib/python3.5/dist-packages/debug_toolbar/toolbar.py'> (djdt:djdt) ^__debug__/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^sparta/>"
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/urls/resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^sparta/>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern home ^/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-register ^divida/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-list ^divida/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-detail ^divida/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-edit ^divida/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern divida-delete ^divida/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-register ^seguranca/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-list ^seguranca/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-detail ^seguranca/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-edit ^seguranca/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern seguranca-delete ^seguranca/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-register ^itensdesejados/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-list ^itensdesejados/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-detail ^itensdesejados/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-edit ^itensdesejados/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern itensdesejados-delete ^itensdesejados/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-register ^controlecusto/register/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-list ^controlecusto/list/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-detail ^controlecusto/detail/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-edit ^controlecusto/edit/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'apps.core.urls' from '/home/dev-3y/git/sparta-project/apps/core/urls.py'> (None:None) ^>, <RegexURLPattern controlecusto-delete ^controlecusto/delete/(?P<pk>\d+)/$>], [<RegexURLResolver <module 'debug_toolbar.toolbar' from '/usr/local/lib/python3.5/dist-packages/debug_toolbar/toolbar.py'> (djdt:djdt) ^__debug__/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'debug_toolbar.toolbar' from '/usr/local/lib/python3.5/dist-packages/debug_toolbar/toolbar.py'> (djdt:djdt) ^__debug__/>"
+(0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+(0.000) SELECT VERSION(); args=None
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 202, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+_mysql_exceptions.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 131, in get_response
+    response = middleware_method(request, response)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/middleware.py", line 129, in process_response
+    panel.generate_stats(request, response)
+  File "/usr/local/lib/python3.5/dist-packages/debug_toolbar/panels/request.py", line 55, in generate_stats
+    for k in sorted(request.session.keys(), key=force_text)]
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 128, in keys
+    return self._session.keys()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/base.py", line 207, in _get_session
+    self._session_cache = self.load()
+  File "/usr/local/lib/python3.5/dist-packages/django/contrib/sessions/backends/db.py", line 35, in load
+    expire_date__gt=timezone.now()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 379, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 238, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/mysql/base.py", line 110, in execute
+    return self.cursor.execute(query, args)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 184, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/connections.py", line 37, in defaulterrorhandler
+    raise errorvalue
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 171, in execute
+    r = self._query(query)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 330, in _query
+    rowcount = self._do_query(q)
+  File "/home/dev-3y/.local/lib/python3.5/site-packages/MySQLdb/cursors.py", line 294, in _do_query
+    db.query(q)
+django.db.utils.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s AND `django_session`.`session_key` = %s)' at line 1")
+(0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` LIMIT 21; args=()
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s) LIMIT 21; args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+(0.029) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > %s AND `django_session`.`session_key` = %s); args=('2017-02-08 09:03:05', 'bmr1ic1tkazeqbe0c73ioftd611v1e7e')
+"GET /favicon.ico HTTP/1.1" 500 202245
